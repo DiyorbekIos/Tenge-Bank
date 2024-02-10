@@ -34,7 +34,6 @@ class AgainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(AgainTableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.scrollsToTop = .random()
     }
     
     private func createLabel() {
@@ -73,7 +72,7 @@ extension AgainViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath
         ) as? AgainTableViewCell  else {return UITableViewCell() }
         cell.backgroundColor = .white
-    
+        cell.selectionStyle = .none
         switch indexPath.row {
         case 0:
             cell.titleLabel.text = "Profil va sozlamalar"
