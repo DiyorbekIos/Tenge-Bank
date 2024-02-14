@@ -79,4 +79,8 @@ extension TransferViewController:UITableViewDelegate,UITableViewDataSource {
         return 85.5
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 } 

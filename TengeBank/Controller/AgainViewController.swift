@@ -72,7 +72,7 @@ extension AgainViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath
         ) as? AgainTableViewCell  else {return UITableViewCell() }
         cell.backgroundColor = .white
-        cell.selectionStyle = .none
+//        cell.selectionStyle = .none
         switch indexPath.row {
         case 0:
             cell.titleLabel.text = "Profil va sozlamalar"
@@ -109,5 +109,9 @@ extension AgainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

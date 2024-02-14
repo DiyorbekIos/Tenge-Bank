@@ -13,20 +13,21 @@ class PayViewController: UIViewController {
     private lazy var collectionView:UICollectionView = {
         let collectionView = UICollectionView(
             frame: CGRect(x: 15, y: 160, width: Int((UIScreen.main.bounds.width)) - 30, height: 280),
-        collectionViewLayout: UICollectionViewLayout())
+        collectionViewLayout: createLayout())
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .systemGray3
+        collectionView.backgroundColor = .white
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.layer.cornerRadius = 10
+        collectionView.isScrollEnabled = false
         return collectionView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray4
         
         title = "To'lovlar"
         view.addSubview(collectionView)
@@ -38,6 +39,26 @@ class PayViewController: UIViewController {
         
     }
     
+    private func createLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { (
+            sectionIndex: Int,
+            layoutEnvironment: NSCollectionLayoutEnvironment
+        ) -> NSCollectionLayoutSection? in
+            
+            
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/4), heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            item.contentInsets = .init(top: 20, leading: 10, bottom: 0, trailing: 10)
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(1/4))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            
+            let section = NSCollectionLayoutSection(group: group)
+            
+            return section
+        }
+        return layout
+    }
     
 }
 
@@ -53,11 +74,13 @@ extension PayViewController{
 
 extension PayViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        
+        cell.backgroundColor = .orange
         
         return cell
     }

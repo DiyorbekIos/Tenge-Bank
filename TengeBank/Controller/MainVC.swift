@@ -19,15 +19,13 @@ final class MainVC: UIViewController {
         collectionView.showsVerticalScrollIndicator = true
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .systemGray3
-    
-        
-        collectionView.register(StoryCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell2")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell3")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell4")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell5")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell6")
+        collectionView.backgroundColor = .systemGray6
+        collectionView.register(StoryCell.self, forCellWithReuseIdentifier: "storyCell")
+        collectionView.register(BalanceCell.self, forCellWithReuseIdentifier: "balanceCell")
+        collectionView.register(PaymentCardsCell.self, forCellWithReuseIdentifier: "paymentCardsCell")
+        collectionView.register(TransferCell.self, forCellWithReuseIdentifier: "transferCell")
+        collectionView.register(MyHomeCell.self, forCellWithReuseIdentifier: "myHomeCell")
+        collectionView.register(TransactionHistoryCell.self, forCellWithReuseIdentifier: "transactionHistoryCell")
         
         return collectionView
     }()
@@ -120,7 +118,7 @@ final class MainVC: UIViewController {
                 
                 let section = NSCollectionLayoutSection(group: group)
                 //            section.interGroupSpacing = 10
-                section.orthogonalScrollingBehavior = .continuous
+                section.orthogonalScrollingBehavior = .groupPagingCentered
                 section.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
                 return section
             case .paymentCards:
@@ -218,9 +216,10 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         switch sectionType {
         case .story:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! StoryCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyCell", for: indexPath) as! StoryCell
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
+            
             switch indexPath.row {
             case 0:
                 cell.imageView.image = UIImage(named:"image1")
@@ -239,34 +238,71 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             case 7:
                 cell.imageView.image = UIImage(named:"image8")
             default:
-                return StoryCell()
+               break
             }
             
             return cell
             
         case .balance:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath)
+            guard  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "balanceCell", for: indexPath) as? BalanceCell else {return UICollectionViewCell() }
+            
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
+            
+            switch indexPath.row {
+            case 0:
+                cell.imageView.image = UIImage(named: "BalanceImage1")
+            case 1:
+                cell.imageView.image = UIImage(named: "BalanceImage2")
+            case 2:
+                cell.imageView.image = UIImage(named: "BalanceImage3")
+            default:
+                cell.addCardMode()
+            }
             return cell
             
         case .paymentCards:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath)
+            guard  let cellType = PaymentCardsType(rawValue: indexPath.item),
+                    let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: "paymentCardsCell", for: indexPath
+                  ) as? PaymentCardsCell
+            else { return UICollectionViewCell() }
+            
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
+            cell.prepare(type: cellType)
             return cell
         case .transfer:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell4", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "transferCell", for: indexPath) as! TransferCell
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
             return cell
         case .myhome:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell5", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myHomeCell", for: indexPath) as! MyHomeCell
+            
+            switch indexPath.row {
+            case 0:
+                cell.imageView.image = UIImage(named: "MyHomeCellImage1")
+                cell.label1.text = "Mening uyim"
+                cell.label2.text = "Komunal to'lovlarni osonroq to'lang"
+            case 1:
+                cell.imageView.image = UIImage(named: "MyHomeCellImage2")
+                cell.label1.text = "Foydali mikroqarz"
+                cell.label2.text = "Qulay shartlarga ega tezkor onlayn mikroqarz, eng!"
+            case 2:
+                cell.imageView.image = UIImage(named: "MyHomeCellImage3")
+                cell.label1.text = "Qulay omonat"
+                cell.label2.text = " Yillik 23% stavkali qulay omonatni oching"
+            default:
+                break
+            }
+            
+            
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
             return cell
         case .transactionHistory:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell6", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "transactionHistoryCell", for: indexPath) as! TransactionHistoryCell
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
             return cell
