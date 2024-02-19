@@ -12,6 +12,9 @@ final class TransferCell: UICollectionViewCell {
     private let label = UILabel()
     private let segmentedControl = UISegmentedControl()
     private let textField = UITextField()
+    private let tfLeftlabel = UILabel()
+    private let tfRightButton = UIButton(type: .system)
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -41,15 +44,7 @@ final class TransferCell: UICollectionViewCell {
         segmentedControl.insertSegment(withTitle: "Telefon raqami", at: 1, animated: false)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.selectedSegmentTintColor = .appColor.primary
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            textField.placeholder = " 8600 1234 5678 1234"
-        case 1:
-            textField.placeholder = " +998"
-        default:
-            break
-        }
-        
+
         
         contentView.addSubview(textField)
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -59,16 +54,41 @@ final class TransferCell: UICollectionViewCell {
             textField.topAnchor.constraint(equalTo: topAnchor, constant: 100),
             textField.heightAnchor.constraint(equalToConstant: 50)
         ])
-       
-        
         textField.layer.borderWidth = 5
         textField.layer.cornerRadius = 10
         textField.layer.borderColor = UIColor.systemGray6.cgColor
+        tfLeftlabel.text = " +998 "
+        textField.leftViewMode = .always
+        textField.leftView = tfLeftlabel
+        tfRightButton.isHidden = true
+        tfLeftlabel.isHidden = true
         
+        tfRightButton.setImage(UIImage(systemName: "person"), for: .normal)
+        tfRightButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        tfRightButton.tintColor = .appColor.primary
+        textField.rightViewMode = .always
+        textField.rightView = tfRightButton
         
-       
-        
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
     }
+    
+    @objc private func segmentedControlValueChanged(_ segmentedControl: UISegmentedControl) {
+           let selectedIndex = segmentedControl.selectedSegmentIndex
+           
+           switch selectedIndex {
+           case 0:
+               textField.placeholder = "  8600 1234 5678 1234"
+               tfRightButton.isHidden = true
+               tfLeftlabel.isHidden = true
+           case 1:
+               tfRightButton.isHidden = false
+               textField.placeholder = nil
+               tfLeftlabel.isHidden = false
+              break
+           default:
+               break
+           }
+       }
 
     
     required init?(coder: NSCoder) {

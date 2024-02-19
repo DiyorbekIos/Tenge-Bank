@@ -22,14 +22,15 @@ class TransferViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -380)
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -420)
         ])
         tableView.layer.cornerRadius = 8
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TransferTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.isScrollEnabled = false
     }
     
     private func createLabel() {
@@ -69,14 +70,13 @@ extension TransferViewController:UITableViewDelegate,UITableViewDataSource {
             cell.titleLabel.text = "Valyuta ayirboshlash"
             cell.button.setImage(UIImage(systemName: "arrow.triangle.2.circlepath.circle"), for: .normal)
         default:
-            return UITableViewCell()
+            break
         }
-        
         cell.button.tintColor = .appColor.primary
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85.5
+        return 75.3
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

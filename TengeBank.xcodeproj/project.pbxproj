@@ -21,6 +21,19 @@
 		BDB803472B6AAF22005E8C9F /* HisobRaqamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB803462B6AAF22005E8C9F /* HisobRaqamViewController.swift */; };
 		BDB803492B6AAF88005E8C9F /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB803482B6AAF88005E8C9F /* TransferViewController.swift */; };
 		BDCB7CE32B7D07B60096A23D /* PayViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB7CE22B7D07B60096A23D /* PayViewControllerCell.swift */; };
+		BDE3266E2B7DEE5C007DB5A9 /* KartaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3266D2B7DEE5C007DB5A9 /* KartaCell.swift */; };
+		BDE326702B7DEE68007DB5A9 /* OmonatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3266F2B7DEE68007DB5A9 /* OmonatCell.swift */; };
+		BDE326722B7DEE7B007DB5A9 /* HisobRaqamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE326712B7DEE7B007DB5A9 /* HisobRaqamCell.swift */; };
+		BDE326742B7DEE88007DB5A9 /* KreditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE326732B7DEE88007DB5A9 /* KreditCell.swift */; };
+		BDE326782B7DFCDD007DB5A9 /* KartaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE326772B7DFCDD007DB5A9 /* KartaTableViewCell.swift */; };
+		BDE3267A2B7E49CB007DB5A9 /* HisobRaqamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE326792B7E49CB007DB5A9 /* HisobRaqamTableViewCell.swift */; };
+		BDE3267C2B7F2760007DB5A9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3267B2B7F2760007DB5A9 /* ProfileViewController.swift */; };
+		BDE3267E2B7FB229007DB5A9 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3267D2B7FB229007DB5A9 /* MessageViewController.swift */; };
+		BDE326832B80776E007DB5A9 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE326822B80776E007DB5A9 /* ProfileTableViewCell.swift */; };
+		BDE3268A2B838E26007DB5A9 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE326892B838E26007DB5A9 /* CardsViewController.swift */; };
+		BDE3268E2B838EB5007DB5A9 /* CardSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3268D2B838EB5007DB5A9 /* CardSettingCell.swift */; };
+		BDE326902B838ECB007DB5A9 /* CardHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3268F2B838ECB007DB5A9 /* CardHistoryCell.swift */; };
+		BDEA70982B83A0C300CF73DE /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA70972B83A0C300CF73DE /* CardsCell.swift */; };
 		BDFC398B2B77B0F000364A5B /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFC398A2B77B0F000364A5B /* StoryCell.swift */; };
 		BDFC398D2B77C19900364A5B /* BalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFC398C2B77C19900364A5B /* BalanceCell.swift */; };
 		BDFC398F2B77C1A900364A5B /* PaymentCardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFC398E2B77C1A900364A5B /* PaymentCardsCell.swift */; };
@@ -46,6 +59,19 @@
 		BDB803462B6AAF22005E8C9F /* HisobRaqamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HisobRaqamViewController.swift; sourceTree = "<group>"; };
 		BDB803482B6AAF88005E8C9F /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 		BDCB7CE22B7D07B60096A23D /* PayViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewControllerCell.swift; sourceTree = "<group>"; };
+		BDE3266D2B7DEE5C007DB5A9 /* KartaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KartaCell.swift; sourceTree = "<group>"; };
+		BDE3266F2B7DEE68007DB5A9 /* OmonatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmonatCell.swift; sourceTree = "<group>"; };
+		BDE326712B7DEE7B007DB5A9 /* HisobRaqamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HisobRaqamCell.swift; sourceTree = "<group>"; };
+		BDE326732B7DEE88007DB5A9 /* KreditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KreditCell.swift; sourceTree = "<group>"; };
+		BDE326772B7DFCDD007DB5A9 /* KartaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KartaTableViewCell.swift; sourceTree = "<group>"; };
+		BDE326792B7E49CB007DB5A9 /* HisobRaqamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HisobRaqamTableViewCell.swift; sourceTree = "<group>"; };
+		BDE3267B2B7F2760007DB5A9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BDE3267D2B7FB229007DB5A9 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		BDE326822B80776E007DB5A9 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		BDE326892B838E26007DB5A9 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		BDE3268D2B838EB5007DB5A9 /* CardSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSettingCell.swift; sourceTree = "<group>"; };
+		BDE3268F2B838ECB007DB5A9 /* CardHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHistoryCell.swift; sourceTree = "<group>"; };
+		BDEA70972B83A0C300CF73DE /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 		BDFC398A2B77B0F000364A5B /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		BDFC398C2B77C19900364A5B /* BalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCell.swift; sourceTree = "<group>"; };
 		BDFC398E2B77C1A900364A5B /* PaymentCardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardsCell.swift; sourceTree = "<group>"; };
@@ -96,6 +122,8 @@
 				BD8309D42B6CBDE700952DD0 /* myhome */,
 				BD8309D52B6CBEB500952DD0 /* transactionHistory */,
 				BD5AA9D82B6D30F800743506 /* MainVC.swift */,
+				BDE3267F2B80679E007DB5A9 /* Profile */,
+				BDE326812B8067DF007DB5A9 /* Message */,
 			);
 			name = Asosiy;
 			sourceTree = "<group>";
@@ -103,6 +131,10 @@
 		BD8309CB2B6CBBE800952DD0 /* HisobRaqamlar */ = {
 			isa = PBXGroup;
 			children = (
+				BDE3266C2B7DEDC7007DB5A9 /* KartaCell */,
+				BDE3266B2B7DEDBB007DB5A9 /* OmonatCell */,
+				BDE3266A2B7DEDA9007DB5A9 /* HisobRaqamCell */,
+				BDE326692B7DED8D007DB5A9 /* KreditCell */,
 				BDB803462B6AAF22005E8C9F /* HisobRaqamViewController.swift */,
 			);
 			name = HisobRaqamlar;
@@ -202,6 +234,7 @@
 		BDB803312B6AAD48005E8C9F /* TengeBank */ = {
 			isa = PBXGroup;
 			children = (
+				BDE326852B838D83007DB5A9 /* Kartalar */,
 				BDB803322B6AAD48005E8C9F /* AppDelegate.swift */,
 				BD8309C22B6B7E1300952DD0 /* TabbarVC.swift */,
 				BD8309C12B6B7D8B00952DD0 /* Controller */,
@@ -211,6 +244,92 @@
 				BDB803402B6AAD49005E8C9F /* Info.plist */,
 			);
 			path = TengeBank;
+			sourceTree = "<group>";
+		};
+		BDE326692B7DED8D007DB5A9 /* KreditCell */ = {
+			isa = PBXGroup;
+			children = (
+				BDE326732B7DEE88007DB5A9 /* KreditCell.swift */,
+			);
+			name = KreditCell;
+			sourceTree = "<group>";
+		};
+		BDE3266A2B7DEDA9007DB5A9 /* HisobRaqamCell */ = {
+			isa = PBXGroup;
+			children = (
+				BDE326712B7DEE7B007DB5A9 /* HisobRaqamCell.swift */,
+				BDE326792B7E49CB007DB5A9 /* HisobRaqamTableViewCell.swift */,
+			);
+			name = HisobRaqamCell;
+			sourceTree = "<group>";
+		};
+		BDE3266B2B7DEDBB007DB5A9 /* OmonatCell */ = {
+			isa = PBXGroup;
+			children = (
+				BDE3266F2B7DEE68007DB5A9 /* OmonatCell.swift */,
+			);
+			name = OmonatCell;
+			sourceTree = "<group>";
+		};
+		BDE3266C2B7DEDC7007DB5A9 /* KartaCell */ = {
+			isa = PBXGroup;
+			children = (
+				BDE3266D2B7DEE5C007DB5A9 /* KartaCell.swift */,
+				BDE326772B7DFCDD007DB5A9 /* KartaTableViewCell.swift */,
+			);
+			name = KartaCell;
+			sourceTree = "<group>";
+		};
+		BDE3267F2B80679E007DB5A9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BDE3267B2B7F2760007DB5A9 /* ProfileViewController.swift */,
+				BDE326822B80776E007DB5A9 /* ProfileTableViewCell.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		BDE326812B8067DF007DB5A9 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				BDE3267D2B7FB229007DB5A9 /* MessageViewController.swift */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		BDE326852B838D83007DB5A9 /* Kartalar */ = {
+			isa = PBXGroup;
+			children = (
+				BDE326892B838E26007DB5A9 /* CardsViewController.swift */,
+				BDE326862B838DBE007DB5A9 /* Karta */,
+				BDE326872B838DC5007DB5A9 /* CardSetting */,
+				BDE326882B838DCF007DB5A9 /* CardHistory */,
+			);
+			path = Kartalar;
+			sourceTree = "<group>";
+		};
+		BDE326862B838DBE007DB5A9 /* Karta */ = {
+			isa = PBXGroup;
+			children = (
+				BDEA70972B83A0C300CF73DE /* CardsCell.swift */,
+			);
+			path = Karta;
+			sourceTree = "<group>";
+		};
+		BDE326872B838DC5007DB5A9 /* CardSetting */ = {
+			isa = PBXGroup;
+			children = (
+				BDE3268D2B838EB5007DB5A9 /* CardSettingCell.swift */,
+			);
+			path = CardSetting;
+			sourceTree = "<group>";
+		};
+		BDE326882B838DCF007DB5A9 /* CardHistory */ = {
+			isa = PBXGroup;
+			children = (
+				BDE3268F2B838ECB007DB5A9 /* CardHistoryCell.swift */,
+			);
+			path = CardHistory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,22 +402,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE326902B838ECB007DB5A9 /* CardHistoryCell.swift in Sources */,
 				BDB803472B6AAF22005E8C9F /* HisobRaqamViewController.swift in Sources */,
 				BDCB7CE32B7D07B60096A23D /* PayViewControllerCell.swift in Sources */,
+				BDE3266E2B7DEE5C007DB5A9 /* KartaCell.swift in Sources */,
+				BDE326832B80776E007DB5A9 /* ProfileTableViewCell.swift in Sources */,
 				BD8309B82B6B779200952DD0 /* PayViewController.swift in Sources */,
 				BDFC39932B77C1CC00364A5B /* MyHomeCell.swift in Sources */,
+				BDE326702B7DEE68007DB5A9 /* OmonatCell.swift in Sources */,
 				BDFC39912B77C1BE00364A5B /* TransferCell.swift in Sources */,
+				BDEA70982B83A0C300CF73DE /* CardsCell.swift in Sources */,
+				BDE3268A2B838E26007DB5A9 /* CardsViewController.swift in Sources */,
 				BD8309C32B6B7E1300952DD0 /* TabbarVC.swift in Sources */,
 				BDFC39952B77C1E600364A5B /* TransactionHistoryCell.swift in Sources */,
 				BD5AA9D92B6D30F800743506 /* MainVC.swift in Sources */,
+				BDE326742B7DEE88007DB5A9 /* KreditCell.swift in Sources */,
 				BDFC398B2B77B0F000364A5B /* StoryCell.swift in Sources */,
 				BDB803332B6AAD48005E8C9F /* AppDelegate.swift in Sources */,
 				BDA9ACB72B72127200527634 /* AgainTableViewCell.swift in Sources */,
+				BDE3267E2B7FB229007DB5A9 /* MessageViewController.swift in Sources */,
+				BDE3268E2B838EB5007DB5A9 /* CardSettingCell.swift in Sources */,
+				BDE326722B7DEE7B007DB5A9 /* HisobRaqamCell.swift in Sources */,
 				BDFC398F2B77C1A900364A5B /* PaymentCardsCell.swift in Sources */,
 				BDA9ACB92B72273B00527634 /* TransferTableViewCell.swift in Sources */,
 				BD8309BF2B6B795B00952DD0 /* Constraint.swift in Sources */,
+				BDE3267A2B7E49CB007DB5A9 /* HisobRaqamTableViewCell.swift in Sources */,
+				BDE326782B7DFCDD007DB5A9 /* KartaTableViewCell.swift in Sources */,
 				BDB803492B6AAF88005E8C9F /* TransferViewController.swift in Sources */,
 				BD8309BD2B6B792400952DD0 /* UIColor.swift in Sources */,
+				BDE3267C2B7F2760007DB5A9 /* ProfileViewController.swift in Sources */,
 				BD8309BA2B6B77C500952DD0 /* AgainViewController.swift in Sources */,
 				BDFC398D2B77C19900364A5B /* BalanceCell.swift in Sources */,
 			);

@@ -38,48 +38,56 @@ final class MainVC: UIViewController {
         
         
         let label = UILabel()
-        view.addSubview(label)
+        
         label.text = "Salom, Diyorbek"
         label.frame = CGRect(x: 0, y: 0, width: 200, height: 90)
-        
+        label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 70),
             label.widthAnchor.constraint(equalToConstant: 200),
             label.heightAnchor.constraint(equalToConstant: 20),
-            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 60)
-        
         ])
         
         label.font = .boldSystemFont(ofSize: 20)
         
+        navigationItem.titleView = label
     }
     
     private func createPersonButton() {
         
-        let personButton = UIButton()
-        personButton.frame = CGRect(x: 15, y: 40, width: 60, height: 60)
+        let personButton = UIButton(type: .system)
+        personButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         personButton.setImage(UIImage(systemName: "person.circle.fill"), for: .normal)
         personButton.tintColor = .appColor.primary
+        personButton.addTarget(self, action: #selector(profileBtnPressed), for: .touchUpInside)
         
-        personButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        
-        let scaleDownTransform = CGAffineTransform(scaleX: 1.7, y: 1.7)
+        let scaleDownTransform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         personButton.transform = scaleDownTransform
         
-        view.addSubview(personButton)
+        navigationItem.leftBarButtonItem = .init(customView: personButton)
+    }
+    
+    @objc private func profileBtnPressed() {
+        navigationController?.pushViewController(ProfileViewController(), animated: true)
     }
     
     private func createBellButton() {
         
         let bellButton = UIButton(type: .system)
-        view.addSubview(bellButton)
+        
         bellButton.frame = CGRect(x:330, y: 40, width: 60, height: 60)
         bellButton.setImage(UIImage(systemName: "bell"), for: .normal)
         bellButton.tintColor = .appColor.primary
+        bellButton.addTarget(self, action: #selector(bellBtnPressed), for: .touchUpInside)
         
         let scaleDownTransform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         bellButton.transform = scaleDownTransform
+        
+        navigationItem.rightBarButtonItem = .init(customView: bellButton)
+    }
+    
+    @objc private func bellBtnPressed() {
+        navigationController?.pushViewController(MessageViewController(), animated: true)
     }
     
     @objc func buttonTapped() {
@@ -95,10 +103,11 @@ final class MainVC: UIViewController {
             guard let index = HomeSectionType(rawValue: sectionIndex) else { return nil }
             
             switch index {
+            
             case .story:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                item.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
+                item.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(1/3))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
@@ -196,14 +205,15 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         guard let sectionType = HomeSectionType(rawValue: section) else { return 0 }
         
         switch sectionType {
+    
         case .story:
-            return  8
+            return 8
         case .balance:
             return 4
         case .paymentCards:
             return 8
         case .transfer:
-            return  1
+            return 1
         case .myhome:
             return 3
         case .transactionHistory:
@@ -215,32 +225,16 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         guard let sectionType = HomeSectionType(rawValue: indexPath.section) else { return UICollectionViewCell() }
         
         switch sectionType {
+       
         case .story:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyCell", for: indexPath) as! StoryCell
+            guard  let cellType = StoryType(rawValue: indexPath.item),
+                    let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: "storyCell", for: indexPath
+                  ) as? StoryCell
+            else { return UICollectionViewCell() }
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
-            
-            switch indexPath.row {
-            case 0:
-                cell.imageView.image = UIImage(named:"image1")
-            case 1:
-                cell.imageView.image = UIImage(named:"image2")
-            case 2:
-                cell.imageView.image = UIImage(named:"image3")
-            case 3:
-                cell.imageView.image = UIImage(named:"image4")
-            case 4:
-                cell.imageView.image = UIImage(named:"image5")
-            case 5:
-                cell.imageView.image = UIImage(named:"image6")
-            case 6:
-                cell.imageView.image = UIImage(named:"image7")
-            case 7:
-                cell.imageView.image = UIImage(named:"image8")
-            default:
-               break
-            }
-            
+            cell.prepare(type: cellType)
             return cell
             
         case .balance:
@@ -249,6 +243,10 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
             
+            if indexPath.row == 3 { // masivni oxirgi elementiga tekshirishingiz kk
+                cell.addCardMode()
+                return cell
+            }
             switch indexPath.row {
             case 0:
                 cell.imageView.image = UIImage(named: "BalanceImage1")
@@ -256,8 +254,8 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                 cell.imageView.image = UIImage(named: "BalanceImage2")
             case 2:
                 cell.imageView.image = UIImage(named: "BalanceImage3")
-            default:
-                cell.addCardMode()
+            default: break
+               
             }
             return cell
             
@@ -280,6 +278,8 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         case .myhome:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myHomeCell", for: indexPath) as! MyHomeCell
             
+            cell.delegate = self
+            
             switch indexPath.row {
             case 0:
                 cell.imageView.image = UIImage(named: "MyHomeCellImage1")
@@ -300,6 +300,10 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
+            
+            
+           
+            
             return cell
         case .transactionHistory:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "transactionHistoryCell", for: indexPath) as! TransactionHistoryCell
@@ -308,9 +312,49 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             return cell
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let sectionType = HomeSectionType(rawValue: indexPath.section) else { return }
+        
+        switch sectionType {
+            
+        case .story:
+            print(sectionType)
+        case .balance:
+            print(sectionType)
+        case .paymentCards:
+//            switch indexPath.item {
+//            case 0:
+//            }
+            navigationController?.pushViewController(PayViewController(), animated: true)
+            
+        case .transfer:
+            print(sectionType)
+        case .myhome:
+            print(sectionType)
+        case .transactionHistory:
+            print(sectionType)
+        }
+    }
 }
 
+
+extension MainVC: HomeCellDelegate {
+    func didPressedMore(_ type: HomeCellType) {
+        switch type {
+        case .home:
+            break
+        case .loan:
+            break
+        case .depozit:
+            break
+        }
+    }
+}
+
+
 enum HomeSectionType: Int, CaseIterable {
+   
     case story
     case balance
     case paymentCards

@@ -12,13 +12,13 @@ class PayViewController: UIViewController {
     private let searchController = UISearchController()
     private lazy var collectionView:UICollectionView = {
         let collectionView = UICollectionView(
-            frame: CGRect(x: 15, y: 160, width: Int((UIScreen.main.bounds.width)) - 30, height: 280),
+            frame: CGRect(x: 15, y: 160, width: Int((UIScreen.main.bounds.width)) - 30, height: 240),
         collectionViewLayout: createLayout())
         
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(PayViewControllerCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.layer.cornerRadius = 10
         collectionView.isScrollEnabled = false
         return collectionView
@@ -27,9 +27,10 @@ class PayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        view.backgroundColor = .systemGray4
+        view.backgroundColor = .systemGray6
         
         title = "To'lovlar"
+
         view.addSubview(collectionView)
         
         searchController.obscuresBackgroundDuringPresentation = false
@@ -54,7 +55,9 @@ class PayViewController: UIViewController {
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
             
             let section = NSCollectionLayoutSection(group: group)
-            
+                        section.interGroupSpacing = 10
+            //                section.orthogonalScrollingBehavior = .continuous
+            section.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
             return section
         }
         return layout
@@ -77,10 +80,16 @@ extension PayViewController:UICollectionViewDelegate,UICollectionViewDataSource,
         return 8
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        guard  let cellType = PayCardsType(rawValue: indexPath.item),
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? PayViewControllerCell  else {return UICollectionViewCell()}
         
-        cell.backgroundColor = .orange
+        cell.backgroundColor = .white
+        cell.prepare(type: cellType)
         
         return cell
     }

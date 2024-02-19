@@ -16,12 +16,12 @@ class HisobRaqamViewController: UIViewController {
         )
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .systemGray3
+        collectionView.backgroundColor = .systemGray6
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell2")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell3")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell4")
+        collectionView.register(KartaCell.self, forCellWithReuseIdentifier: "KartaCell")
+        collectionView.register(OmonatCell.self, forCellWithReuseIdentifier: "OmonatCell")
+        collectionView.register(HisobRaqamCell.self, forCellWithReuseIdentifier: "HisobRaqamCell")
+        collectionView.register(KreditCell.self, forCellWithReuseIdentifier: "KreditCell")
         
         return collectionView
     }()
@@ -32,6 +32,7 @@ class HisobRaqamViewController: UIViewController {
         view.addSubview(collectionView)
         
         title = "Hisob raqam"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -44,12 +45,24 @@ class HisobRaqamViewController: UIViewController {
             
             switch index {
                 
-            case .cards, .omonat, .hisobRaqam, .credit:
+            case .cards, .omonat, .credit:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10)
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(350))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10)
+                return section
+                
+            case .hisobRaqam:
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10)
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(250))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 
                 let section = NSCollectionLayoutSection(group: group)
@@ -81,22 +94,35 @@ extension HisobRaqamViewController: UICollectionViewDelegate, UICollectionViewDa
         
         switch sectionType {
         case .cards:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "KartaCell", for: indexPath) as! KartaCell
+            cell.button.setImage(UIImage(systemName: "plus.circle"), for: .normal)
+            cell.button.setTitle("Kartani qo'shish", for: .normal)
+            cell.button2.setTitle("Ko'proq ko'rsatish", for: .normal)
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
             return cell
+            
         case .omonat:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OmonatCell", for: indexPath) as! OmonatCell
+            cell.imageView.image = UIImage(named: "Omonat")
+            cell.button.setTitle("Ochish", for: .normal)
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
             return cell
+            
         case .hisobRaqam:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HisobRaqamCell", for: indexPath) as! HisobRaqamCell
+            cell.button.setTitle("Hisob ochish", for: .normal)
+            cell.button.setImage(UIImage(systemName: "plus.circle"), for: .normal)
+            cell.button2.setTitle("Ko'proq ko'rsatish", for: .normal)
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
             return cell
+            
         case .credit:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell4", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "KreditCell", for: indexPath) as! KreditCell
+            cell.imageView.image = UIImage(named: "Kredit")
+            cell.button.setTitle("Ochish", for: .normal)
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
             return cell

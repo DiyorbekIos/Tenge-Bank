@@ -20,14 +20,15 @@ final class TransferTableViewCell:UITableViewCell {
         NSLayoutConstraint.activate([
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10),
             titleLabel.heightAnchor.constraint(equalToConstant: 100),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60),
-            titleLabel.widthAnchor.constraint(equalToConstant: 250 )
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 70),
+            titleLabel.widthAnchor.constraint(equalToConstant: 300 )
             
         ])
         
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.borderWidth = 0.2
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor.systemGray3.cgColor
         button.layer.cornerRadius = 5
         
         NSLayoutConstraint.activate([
@@ -36,6 +37,8 @@ final class TransferTableViewCell:UITableViewCell {
             button.heightAnchor.constraint(equalToConstant: 40),
             button.widthAnchor.constraint(equalToConstant: 40)
         ])
+        let scaleDownTransform = CGAffineTransform(scaleX: 1, y: 1)
+        button.transform = scaleDownTransform
         
     }
     

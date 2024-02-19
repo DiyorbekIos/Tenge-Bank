@@ -15,6 +15,6 @@ extension UIColor {
         UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1)
     }
     struct AppColor {
-        let primary:UIColor = .rgb(r: 59, g: 133, b: 111)
+        let primary:UIColor = .rgb(r: 83, g: 163, b: 99)
     }
 }

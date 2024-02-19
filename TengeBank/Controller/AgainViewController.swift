@@ -16,18 +16,20 @@ class AgainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createLabel()
         createButton()
+        title = "Yana"
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         view.backgroundColor = .systemGray6
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
         
         tableView.layer.cornerRadius = 8
@@ -36,29 +38,18 @@ class AgainViewController: UIViewController {
         tableView.register(AgainTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-    private func createLabel() {
-        view.addSubview(titleLabel)
-        titleLabel.text = "Yana"
-        titleLabel.font = UIFont.systemFont(ofSize: 35,weight: .bold)
-        
-    
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)
-        
-        ])
-    }
     private func createButton() {
-        view.addSubview(exitButton)
-        exitButton.setImage(UIImage(systemName:"rectangle.portrait.and.arrow.right"), for: .normal)
-        exitButton.tintColor = .appColor.primary
-        exitButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            exitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            exitButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 60)
         
-        ])
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName:"rectangle.portrait.and.arrow.right"), for: .normal)
+        button.addTarget(self, action: #selector(leavePressed), for: .touchUpInside)
+        button.tintColor = .appColor.primary
+        
+        navigationItem.rightBarButtonItem = .init(customView: button)
+    }
+    
+    @objc private func leavePressed() {
+        
     }
     
 }

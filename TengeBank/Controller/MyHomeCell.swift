@@ -7,17 +7,33 @@
 
 import UIKit
 
-final class  MyHomeCell: UICollectionViewCell {
+enum HomeCellType: Int {
+    case home
+    case loan
+    case depozit
+}
+
+protocol HomeCellDelegate: AnyObject {
+    func didPressedMore(_ type: HomeCellType)
+}
+
+final class MyHomeCell: UICollectionViewCell {
     
-   let imageView = UIImageView()
-   let label1 = UILabel()
-   let label2 = UILabel()
+    let imageView = UIImageView()
+    let label1 = UILabel()
+    let label2 = UILabel()
+    
     private let button = UIButton(type: .system)
     
+    var nmadrPressed: ((HomeCellType) -> ())?
+    
+    weak var delegate: HomeCellDelegate?
+    
+    var type: HomeCellType = .home
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         contentView.addSubview(imageView)
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
@@ -68,6 +84,13 @@ final class  MyHomeCell: UICollectionViewCell {
             button.topAnchor.constraint(equalTo: topAnchor, constant: 110),
             button.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+        button.addTarget(self, action: #selector(morePressed), for: .touchUpInside)
+    }
+    
+    @objc private func morePressed() {
+        delegate?.didPressedMore(type)
+        nmadrPressed?(type)
     }
     
     required init?(coder: NSCoder) {

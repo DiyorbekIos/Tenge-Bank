@@ -1,35 +1,34 @@
 //
-//  AgainTableViewCell.swift
+//  ProfileTableViewCell.swift
 //  TengeBank
 //
-//  Created by Turonboyev Diyorbek on 06/02/24.
+//  Created by Turonboyev Diyorbek on 17/02/24.
 //
 
 import UIKit
 
-final class AgainTableViewCell:UITableViewCell {
+final class ProfileTableViewCell:UITableViewCell {
     
-    let titleLabel = UILabel()
-    let button  = UIButton(type: .system)
+     let label = UILabel()
+    let button = UIButton(type: .system)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addSubview(titleLabel)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+       addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10),
-            titleLabel.heightAnchor.constraint(equalToConstant: 100),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60),
-            titleLabel.widthAnchor.constraint(equalToConstant: 250 )
-            
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 65),
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 35),
+            label.heightAnchor.constraint(equalToConstant: 20)
         ])
-        titleLabel.numberOfLines = 2
+      
         
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 0.2
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 10
         
         NSLayoutConstraint.activate([
             button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
@@ -37,11 +36,12 @@ final class AgainTableViewCell:UITableViewCell {
             button.heightAnchor.constraint(equalToConstant: 40),
             button.widthAnchor.constraint(equalToConstant: 40)
         ])
+        let scaleDownTransform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        button.transform = scaleDownTransform
         
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
