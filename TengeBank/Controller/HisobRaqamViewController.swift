@@ -33,6 +33,7 @@ class HisobRaqamViewController: UIViewController {
         
         title = "Hisob raqam"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
     
     private func createLayout() -> UICollectionViewLayout {

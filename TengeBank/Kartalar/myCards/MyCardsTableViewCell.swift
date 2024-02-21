@@ -1,13 +1,13 @@
 //
-//  KartaTableViewCell.swift
+//  MyCardsTableViewCell.swift
 //  TengeBank
 //
-//  Created by Turonboyev Diyorbek on 15/02/24.
+//  Created by Turonboyev Diyorbek on 20/02/24.
 //
 
 import UIKit
 
-final class KartaTableViewCell:UITableViewCell {
+final class MyCardsTableViewCell:UITableViewCell {
     
     let label = UILabel()
     let image = UIImageView()
@@ -24,7 +24,6 @@ final class KartaTableViewCell:UITableViewCell {
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60)
         ])
         label.font = .systemFont(ofSize:14)
-        label.textColor = .systemGray2
         
         
         contentView.addSubview(image)
@@ -47,7 +46,6 @@ final class KartaTableViewCell:UITableViewCell {
         ])
         label2.font = .systemFont(ofSize:12)
         label2.font = .boldSystemFont(ofSize: 18)
-       
         
         
     }
@@ -57,4 +55,7 @@ final class KartaTableViewCell:UITableViewCell {
     }
     
 }
+
+
+
 

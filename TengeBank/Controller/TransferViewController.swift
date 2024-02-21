@@ -18,6 +18,14 @@ class TransferViewController: UIViewController {
         
         view.backgroundColor = .systemGray6
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "chevron.left"),
+            style: .done,
+            target: self,
+            action: #selector(leftButtonTapped)
+        )
+        navigationItem.leftBarButtonItem?.tintColor = .black
+        
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -33,6 +41,9 @@ class TransferViewController: UIViewController {
         tableView.isScrollEnabled = false
     }
     
+    @objc private func leftButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
     private func createLabel() {
         view.addSubview(titleLabel)
         titleLabel.text = "O'tkazmalar"

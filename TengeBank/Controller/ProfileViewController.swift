@@ -18,6 +18,9 @@ final class ProfileViewController:UIViewController {
     private let languageButton = UIButton(type: .system)
     private let copyButton  = UIButton(type: .system)
     private let numberLabel = UILabel()
+    private  let imagePicker =  UIImagePickerController()
+    private let imageView = UIImageView()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,25 +32,64 @@ final class ProfileViewController:UIViewController {
             target: self,
             action: #selector(leftButtonTapped)
         )
+        navigationItem.leftBarButtonItem?.tintColor = .black
         
         view.backgroundColor = .systemGray6
+        createAddImageButton ()
+        createLabel()
+        createTitleLabel()
+        createLanguageButton ()
+        createCopyButton ()
+        createNumberLabel()
         
-        
+       view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 85),
+            tableView.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 15),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -250)
+        ])
+        tableView.isScrollEnabled = false
+        tableView.layer.cornerRadius = 8
+        tableView.layer.masksToBounds = true
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "cell")
+    
+    }
+    
+    private func createAddImageButton () {
         view.addSubview(addImageButton)
         addImageButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             addImageButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
-            addImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            addImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            addImageButton.heightAnchor.constraint(equalToConstant: 30),
+            addImageButton.widthAnchor.constraint(equalToConstant: 30)
         ])
         addImageButton.setImage(UIImage(systemName: "person.crop.circle.fill.badge.plus"), for: .normal)
         addImageButton.tintColor = .appColor.primary
         addImageButton.layer.cornerRadius = 3
         addImageButton.layer.borderWidth = 0.5
         addImageButton.layer.borderColor = UIColor.orange.cgColor
+        addImageButton.addTarget(self, action: #selector(addImageButtonTapped), for: .touchUpInside)
         let scaleDownTransform = CGAffineTransform(scaleX: 3.2, y: 3.2)
         addImageButton.transform = scaleDownTransform
-       
         
+        addImageButton.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.leadingAnchor.constraint(equalTo: addImageButton.leadingAnchor, constant: 0),
+            imageView.trailingAnchor.constraint(equalTo: addImageButton.trailingAnchor, constant: 0),
+            imageView.topAnchor.constraint(equalTo: addImageButton.topAnchor, constant: 0),
+            imageView.bottomAnchor.constraint(equalTo: addImageButton.bottomAnchor, constant: 0)
+        ])
+        imageView.layer.cornerRadius  = .zero
+       
+    }
+    
+    private func createLabel() {
         view.addSubview(label1)
         label1.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -79,24 +121,9 @@ final class ProfileViewController:UIViewController {
         label3.font = .systemFont(ofSize: 18)
         label3.font = .boldSystemFont(ofSize: 18)
         
-        
+    }
     
-       view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 85),
-            tableView.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 15),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -250)
-        ])
-        tableView.isScrollEnabled = false
-        tableView.layer.cornerRadius = 8
-        tableView.layer.masksToBounds = true
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "cell")
-        
-        
+    private func  createTitleLabel() {
         view.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -109,8 +136,9 @@ final class ProfileViewController:UIViewController {
         titleLabel.backgroundColor = .white
         titleLabel.font = .systemFont(ofSize: 16)
         titleLabel.layer.cornerRadius = 10
-        
-        
+    }
+    
+    private func createLanguageButton () {
         tableView.addSubview(languageButton)
         languageButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -122,7 +150,9 @@ final class ProfileViewController:UIViewController {
         languageButton.setTitle("UZ", for: .normal)
         languageButton.tintColor = .appColor.primary
         languageButton.addTarget(self, action: #selector(showActionSheet), for: .touchUpInside)
-        
+    }
+    
+    private func createCopyButton () {
         tableView.addSubview(copyButton)
         copyButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -133,7 +163,10 @@ final class ProfileViewController:UIViewController {
         ])
         copyButton.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
         copyButton.tintColor = .appColor.primary
-        
+        copyButton.addTarget(self, action: #selector(copyButtonPressed), for: .touchUpInside)
+    }
+    
+    private func createNumberLabel() {
         tableView.addSubview(numberLabel)
         numberLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -149,17 +182,19 @@ final class ProfileViewController:UIViewController {
     
     @objc func showActionSheet() {
         let actionSheet = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
-        actionSheet.view.tintColor = .black
+//        actionSheet.view.tintColor = .black
 
         let option1 = UIAlertAction(title: "Русский", style: .default) { _ in
-            // Ulashish variantiga bosilganda amalni bajarish
+            self.languageButton.setTitle("Py", for: .normal)
         }
 
         let option2 = UIAlertAction(title: "English", style: .default) { _ in
-            // O'chirish variantiga bosilganda amalni bajarish
+            self.languageButton.setTitle("En", for: .normal)
         }
 
-        let option3 = UIAlertAction(title: "O'zbekcha", style: .default)
+        let option3 = UIAlertAction(title: "O'zbekcha", style: .default) { _ in
+            self.languageButton.setTitle("Uz", for: .normal)
+        }
         
         actionSheet.addAction(option1)
         actionSheet.addAction(option2)
@@ -172,7 +207,37 @@ final class ProfileViewController:UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @objc private func copyButtonPressed() {
+        UIPasteboard.general.string = numberLabel.text
+        
+        let alert = UIAlertController(title: "Nusxa ko'chirildi", message: "Telefon raqamingizdan nusxa olindi", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     
+    func leaveButtonPressed() {
+        // create the alert
+        let alert = UIAlertController(title: "", message: "Haqiqatdan ham profilingizni o'chirmoqchimisiz", preferredStyle: UIAlertController.Style.alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Ha", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yo'q", style: UIAlertAction.Style.cancel, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    @objc private  func addImageButtonTapped() {
+        self.imagePicker.delegate = self
+        self.imagePicker.allowsEditing = false
+        self.imagePicker.mediaTypes = ["public.image","public.movie"]
+        
+        DispatchQueue.main.async { [weak self ] in
+            guard let self = self else {return}
+            self.present(self.imagePicker, animated: true, completion:nil)
+        }
+    }
 }
 
 extension ProfileViewController:UITableViewDelegate,UITableViewDataSource {
@@ -209,6 +274,35 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.item == 2 {
+            leaveButtonPressed()
+        }
     }
     
+}
+
+
+extension ProfileViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if info[.mediaType] as? String == "public.image" {
+            self.handlePhoto(info)
+        } else if info[.mediaType] as? String == "public.movie" {
+            
+        } else {
+            print ("DEBUG PRINT:", "Media was neither Image or Video.")
+        }
+        
+        DispatchQueue.main.async { [weak self ] in
+            self?.dismiss (animated: true, completion: nil)
+        }
+    }
+    
+        // MARK: -  images
+     private func handlePhoto(_ info:[UIImagePickerController.InfoKey : Any]) {
+            if let image = info[.originalImage] as? UIImage {
+                self.imageView.image = image
+        }
+    }
 }

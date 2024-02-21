@@ -26,7 +26,7 @@ enum PaymentCardsType: Int {
         case .exchange: return "Valyuta ayriboshlash"
         case .unnown: return "Kreditlar"
         case .qr: return "Qr to'lov"
-        case .history: return "Tarix"
+        case .history: return "Mening arizalarim"
         }
     }
         
@@ -40,7 +40,7 @@ enum PaymentCardsType: Int {
             case .exchange: return "arrow.triangle.2.circlepath.circle"
             case .unnown: return "bag"
             case .qr: return "arrow.triangle.2.circlepath.circle"
-            case .history: return "clock.arrow.circlepath"
+            case .history: return "doc.plaintext.fill"
             }
         }
     }

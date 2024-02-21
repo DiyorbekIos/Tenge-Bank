@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD49DAE62B84C8420002F284 /* MyCardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAE52B84C8420002F284 /* MyCardsCell.swift */; };
+		BD49DAE82B84FF2F0002F284 /* MyCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAE72B84FF2F0002F284 /* MyCardsTableViewCell.swift */; };
+		BD49DAEB2B85C3920002F284 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAEA2B85C3920002F284 /* CreditsViewController.swift */; };
+		BD49DAEF2B85C4D40002F284 /* OnlineMikroqarzCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAEE2B85C4D40002F284 /* OnlineMikroqarzCell.swift */; };
+		BD49DAF12B85C4E50002F284 /* MikroqarzLifeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAF02B85C4E50002F284 /* MikroqarzLifeCell.swift */; };
+		BD49DAF42B85DBDE0002F284 /* OmonatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAF32B85DBDE0002F284 /* OmonatViewController.swift */; };
+		BD49DAF82B85DC480002F284 /* UsefulCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAF72B85DC480002F284 /* UsefulCell.swift */; };
+		BD49DAFA2B85DC540002F284 /* ComfortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAF92B85DC540002F284 /* ComfortCell.swift */; };
+		BD49DAFD2B862B3B0002F284 /* OtkazmalarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAFC2B862B3B0002F284 /* OtkazmalarViewController.swift */; };
+		BD49DAFF2B862BA30002F284 /* MeningArizalarimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAFE2B862BA30002F284 /* MeningArizalarimViewController.swift */; };
+		BD49DB012B862C4B0002F284 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DB002B862C4B0002F284 /* ExchangeViewController.swift */; };
+		BD49DB032B862C930002F284 /* QRPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DB022B862C930002F284 /* QRPaymentViewController.swift */; };
 		BD5AA9D92B6D30F800743506 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5AA9D82B6D30F800743506 /* MainVC.swift */; };
 		BD8309B82B6B779200952DD0 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8309B72B6B779200952DD0 /* PayViewController.swift */; };
 		BD8309BA2B6B77C500952DD0 /* AgainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8309B92B6B77C500952DD0 /* AgainViewController.swift */; };
@@ -31,9 +43,9 @@
 		BDE3267E2B7FB229007DB5A9 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3267D2B7FB229007DB5A9 /* MessageViewController.swift */; };
 		BDE326832B80776E007DB5A9 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE326822B80776E007DB5A9 /* ProfileTableViewCell.swift */; };
 		BDE3268A2B838E26007DB5A9 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE326892B838E26007DB5A9 /* CardsViewController.swift */; };
-		BDE3268E2B838EB5007DB5A9 /* CardSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3268D2B838EB5007DB5A9 /* CardSettingCell.swift */; };
-		BDE326902B838ECB007DB5A9 /* CardHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3268F2B838ECB007DB5A9 /* CardHistoryCell.swift */; };
-		BDEA70982B83A0C300CF73DE /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA70972B83A0C300CF73DE /* CardsCell.swift */; };
+		BDE3268E2B838EB5007DB5A9 /* HumoVirtualCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3268D2B838EB5007DB5A9 /* HumoVirtualCell.swift */; };
+		BDE326902B838ECB007DB5A9 /* MasterCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE3268F2B838ECB007DB5A9 /* MasterCardCell.swift */; };
+		BDEA70982B83A0C300CF73DE /* OpenCardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA70972B83A0C300CF73DE /* OpenCardsCell.swift */; };
 		BDFC398B2B77B0F000364A5B /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFC398A2B77B0F000364A5B /* StoryCell.swift */; };
 		BDFC398D2B77C19900364A5B /* BalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFC398C2B77C19900364A5B /* BalanceCell.swift */; };
 		BDFC398F2B77C1A900364A5B /* PaymentCardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFC398E2B77C1A900364A5B /* PaymentCardsCell.swift */; };
@@ -43,6 +55,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD49DAE52B84C8420002F284 /* MyCardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsCell.swift; sourceTree = "<group>"; };
+		BD49DAE72B84FF2F0002F284 /* MyCardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsTableViewCell.swift; sourceTree = "<group>"; };
+		BD49DAEA2B85C3920002F284 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		BD49DAEE2B85C4D40002F284 /* OnlineMikroqarzCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineMikroqarzCell.swift; sourceTree = "<group>"; };
+		BD49DAF02B85C4E50002F284 /* MikroqarzLifeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MikroqarzLifeCell.swift; sourceTree = "<group>"; };
+		BD49DAF32B85DBDE0002F284 /* OmonatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmonatViewController.swift; sourceTree = "<group>"; };
+		BD49DAF72B85DC480002F284 /* UsefulCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsefulCell.swift; sourceTree = "<group>"; };
+		BD49DAF92B85DC540002F284 /* ComfortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfortCell.swift; sourceTree = "<group>"; };
+		BD49DAFC2B862B3B0002F284 /* OtkazmalarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtkazmalarViewController.swift; sourceTree = "<group>"; };
+		BD49DAFE2B862BA30002F284 /* MeningArizalarimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeningArizalarimViewController.swift; sourceTree = "<group>"; };
+		BD49DB002B862C4B0002F284 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
+		BD49DB022B862C930002F284 /* QRPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentViewController.swift; sourceTree = "<group>"; };
 		BD5AA9D82B6D30F800743506 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		BD8309B72B6B779200952DD0 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		BD8309B92B6B77C500952DD0 /* AgainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgainViewController.swift; sourceTree = "<group>"; };
@@ -69,9 +93,9 @@
 		BDE3267D2B7FB229007DB5A9 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		BDE326822B80776E007DB5A9 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		BDE326892B838E26007DB5A9 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
-		BDE3268D2B838EB5007DB5A9 /* CardSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSettingCell.swift; sourceTree = "<group>"; };
-		BDE3268F2B838ECB007DB5A9 /* CardHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHistoryCell.swift; sourceTree = "<group>"; };
-		BDEA70972B83A0C300CF73DE /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
+		BDE3268D2B838EB5007DB5A9 /* HumoVirtualCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumoVirtualCell.swift; sourceTree = "<group>"; };
+		BDE3268F2B838ECB007DB5A9 /* MasterCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardCell.swift; sourceTree = "<group>"; };
+		BDEA70972B83A0C300CF73DE /* OpenCardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCardsCell.swift; sourceTree = "<group>"; };
 		BDFC398A2B77B0F000364A5B /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		BDFC398C2B77C19900364A5B /* BalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCell.swift; sourceTree = "<group>"; };
 		BDFC398E2B77C1A900364A5B /* PaymentCardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardsCell.swift; sourceTree = "<group>"; };
@@ -91,6 +115,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD49DAE42B84C70C0002F284 /* myCards */ = {
+			isa = PBXGroup;
+			children = (
+				BD49DAE52B84C8420002F284 /* MyCardsCell.swift */,
+				BD49DAE72B84FF2F0002F284 /* MyCardsTableViewCell.swift */,
+			);
+			path = myCards;
+			sourceTree = "<group>";
+		};
+		BD49DAE92B85C3630002F284 /* Kreditlar */ = {
+			isa = PBXGroup;
+			children = (
+				BD49DAEC2B85C3AA0002F284 /* OnlineMikroqarz */,
+				BD49DAED2B85C4040002F284 /* MikroqarzLife */,
+				BD49DAEA2B85C3920002F284 /* CreditsViewController.swift */,
+			);
+			path = Kreditlar;
+			sourceTree = "<group>";
+		};
+		BD49DAEC2B85C3AA0002F284 /* OnlineMikroqarz */ = {
+			isa = PBXGroup;
+			children = (
+				BD49DAEE2B85C4D40002F284 /* OnlineMikroqarzCell.swift */,
+			);
+			path = OnlineMikroqarz;
+			sourceTree = "<group>";
+		};
+		BD49DAED2B85C4040002F284 /* MikroqarzLife */ = {
+			isa = PBXGroup;
+			children = (
+				BD49DAF02B85C4E50002F284 /* MikroqarzLifeCell.swift */,
+			);
+			path = MikroqarzLife;
+			sourceTree = "<group>";
+		};
+		BD49DAF22B85DBB80002F284 /* Omonatlar */ = {
+			isa = PBXGroup;
+			children = (
+				BD49DAF52B85DBF50002F284 /* useful */,
+				BD49DAF62B85DC1B0002F284 /* comfort */,
+				BD49DAF32B85DBDE0002F284 /* OmonatViewController.swift */,
+			);
+			path = Omonatlar;
+			sourceTree = "<group>";
+		};
+		BD49DAF52B85DBF50002F284 /* useful */ = {
+			isa = PBXGroup;
+			children = (
+				BD49DAF72B85DC480002F284 /* UsefulCell.swift */,
+			);
+			path = useful;
+			sourceTree = "<group>";
+		};
+		BD49DAF62B85DC1B0002F284 /* comfort */ = {
+			isa = PBXGroup;
+			children = (
+				BD49DAF92B85DC540002F284 /* ComfortCell.swift */,
+			);
+			path = comfort;
+			sourceTree = "<group>";
+		};
+		BD49DAFB2B862B100002F284 /* PaymentCardsItemView */ = {
+			isa = PBXGroup;
+			children = (
+				BD49DAFC2B862B3B0002F284 /* OtkazmalarViewController.swift */,
+				BD49DAFE2B862BA30002F284 /* MeningArizalarimViewController.swift */,
+				BD49DB002B862C4B0002F284 /* ExchangeViewController.swift */,
+				BD49DB022B862C930002F284 /* QRPaymentViewController.swift */,
+			);
+			path = PaymentCardsItemView;
+			sourceTree = "<group>";
+		};
 		BD8309BB2B6B78EF00952DD0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +330,9 @@
 		BDB803312B6AAD48005E8C9F /* TengeBank */ = {
 			isa = PBXGroup;
 			children = (
+				BD49DAFB2B862B100002F284 /* PaymentCardsItemView */,
+				BD49DAF22B85DBB80002F284 /* Omonatlar */,
+				BD49DAE92B85C3630002F284 /* Kreditlar */,
 				BDE326852B838D83007DB5A9 /* Kartalar */,
 				BDB803322B6AAD48005E8C9F /* AppDelegate.swift */,
 				BD8309C22B6B7E1300952DD0 /* TabbarVC.swift */,
@@ -301,35 +400,36 @@
 			isa = PBXGroup;
 			children = (
 				BDE326892B838E26007DB5A9 /* CardsViewController.swift */,
-				BDE326862B838DBE007DB5A9 /* Karta */,
-				BDE326872B838DC5007DB5A9 /* CardSetting */,
-				BDE326882B838DCF007DB5A9 /* CardHistory */,
+				BD49DAE42B84C70C0002F284 /* myCards */,
+				BDE326862B838DBE007DB5A9 /* openCards */,
+				BDE326872B838DC5007DB5A9 /* humoVirtual */,
+				BDE326882B838DCF007DB5A9 /* mastercard */,
 			);
 			path = Kartalar;
 			sourceTree = "<group>";
 		};
-		BDE326862B838DBE007DB5A9 /* Karta */ = {
+		BDE326862B838DBE007DB5A9 /* openCards */ = {
 			isa = PBXGroup;
 			children = (
-				BDEA70972B83A0C300CF73DE /* CardsCell.swift */,
+				BDEA70972B83A0C300CF73DE /* OpenCardsCell.swift */,
 			);
-			path = Karta;
+			path = openCards;
 			sourceTree = "<group>";
 		};
-		BDE326872B838DC5007DB5A9 /* CardSetting */ = {
+		BDE326872B838DC5007DB5A9 /* humoVirtual */ = {
 			isa = PBXGroup;
 			children = (
-				BDE3268D2B838EB5007DB5A9 /* CardSettingCell.swift */,
+				BDE3268D2B838EB5007DB5A9 /* HumoVirtualCell.swift */,
 			);
-			path = CardSetting;
+			path = humoVirtual;
 			sourceTree = "<group>";
 		};
-		BDE326882B838DCF007DB5A9 /* CardHistory */ = {
+		BDE326882B838DCF007DB5A9 /* mastercard */ = {
 			isa = PBXGroup;
 			children = (
-				BDE3268F2B838ECB007DB5A9 /* CardHistoryCell.swift */,
+				BDE3268F2B838ECB007DB5A9 /* MasterCardCell.swift */,
 			);
-			path = CardHistory;
+			path = mastercard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,7 +502,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDE326902B838ECB007DB5A9 /* CardHistoryCell.swift in Sources */,
+				BDE326902B838ECB007DB5A9 /* MasterCardCell.swift in Sources */,
+				BD49DB032B862C930002F284 /* QRPaymentViewController.swift in Sources */,
 				BDB803472B6AAF22005E8C9F /* HisobRaqamViewController.swift in Sources */,
 				BDCB7CE32B7D07B60096A23D /* PayViewControllerCell.swift in Sources */,
 				BDE3266E2B7DEE5C007DB5A9 /* KartaCell.swift in Sources */,
@@ -411,28 +512,39 @@
 				BDFC39932B77C1CC00364A5B /* MyHomeCell.swift in Sources */,
 				BDE326702B7DEE68007DB5A9 /* OmonatCell.swift in Sources */,
 				BDFC39912B77C1BE00364A5B /* TransferCell.swift in Sources */,
-				BDEA70982B83A0C300CF73DE /* CardsCell.swift in Sources */,
+				BD49DAFD2B862B3B0002F284 /* OtkazmalarViewController.swift in Sources */,
+				BD49DAFF2B862BA30002F284 /* MeningArizalarimViewController.swift in Sources */,
+				BD49DAF82B85DC480002F284 /* UsefulCell.swift in Sources */,
+				BDEA70982B83A0C300CF73DE /* OpenCardsCell.swift in Sources */,
 				BDE3268A2B838E26007DB5A9 /* CardsViewController.swift in Sources */,
 				BD8309C32B6B7E1300952DD0 /* TabbarVC.swift in Sources */,
 				BDFC39952B77C1E600364A5B /* TransactionHistoryCell.swift in Sources */,
 				BD5AA9D92B6D30F800743506 /* MainVC.swift in Sources */,
 				BDE326742B7DEE88007DB5A9 /* KreditCell.swift in Sources */,
 				BDFC398B2B77B0F000364A5B /* StoryCell.swift in Sources */,
+				BD49DAF42B85DBDE0002F284 /* OmonatViewController.swift in Sources */,
 				BDB803332B6AAD48005E8C9F /* AppDelegate.swift in Sources */,
 				BDA9ACB72B72127200527634 /* AgainTableViewCell.swift in Sources */,
 				BDE3267E2B7FB229007DB5A9 /* MessageViewController.swift in Sources */,
-				BDE3268E2B838EB5007DB5A9 /* CardSettingCell.swift in Sources */,
+				BDE3268E2B838EB5007DB5A9 /* HumoVirtualCell.swift in Sources */,
+				BD49DAFA2B85DC540002F284 /* ComfortCell.swift in Sources */,
+				BD49DAE82B84FF2F0002F284 /* MyCardsTableViewCell.swift in Sources */,
 				BDE326722B7DEE7B007DB5A9 /* HisobRaqamCell.swift in Sources */,
 				BDFC398F2B77C1A900364A5B /* PaymentCardsCell.swift in Sources */,
+				BD49DAEB2B85C3920002F284 /* CreditsViewController.swift in Sources */,
 				BDA9ACB92B72273B00527634 /* TransferTableViewCell.swift in Sources */,
 				BD8309BF2B6B795B00952DD0 /* Constraint.swift in Sources */,
 				BDE3267A2B7E49CB007DB5A9 /* HisobRaqamTableViewCell.swift in Sources */,
 				BDE326782B7DFCDD007DB5A9 /* KartaTableViewCell.swift in Sources */,
 				BDB803492B6AAF88005E8C9F /* TransferViewController.swift in Sources */,
 				BD8309BD2B6B792400952DD0 /* UIColor.swift in Sources */,
+				BD49DAEF2B85C4D40002F284 /* OnlineMikroqarzCell.swift in Sources */,
 				BDE3267C2B7F2760007DB5A9 /* ProfileViewController.swift in Sources */,
+				BD49DB012B862C4B0002F284 /* ExchangeViewController.swift in Sources */,
 				BD8309BA2B6B77C500952DD0 /* AgainViewController.swift in Sources */,
 				BDFC398D2B77C19900364A5B /* BalanceCell.swift in Sources */,
+				BD49DAF12B85C4E50002F284 /* MikroqarzLifeCell.swift in Sources */,
+				BD49DAE62B84C8420002F284 /* MyCardsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

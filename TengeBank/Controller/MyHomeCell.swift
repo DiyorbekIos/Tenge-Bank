@@ -23,7 +23,7 @@ final class MyHomeCell: UICollectionViewCell {
     let label1 = UILabel()
     let label2 = UILabel()
     
-    private let button = UIButton(type: .system)
+    let button = UIButton(type: .system)
     
     var nmadrPressed: ((HomeCellType) -> ())?
     
@@ -72,8 +72,8 @@ final class MyHomeCell: UICollectionViewCell {
     
     func createButton() {
         contentView.addSubview(button)
-        button.setTitle("Batafsil", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+//        button.setTitle("Batafsil", for: .normal)
+//        button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 3
         button.layer.borderColor = UIColor.white.cgColor

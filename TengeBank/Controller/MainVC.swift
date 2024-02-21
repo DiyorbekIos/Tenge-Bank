@@ -190,6 +190,8 @@ final class MainVC: UIViewController {
         }
         return layout
     }
+    
+    
 }
 
 
@@ -209,7 +211,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         case .story:
             return 8
         case .balance:
-            return 4
+            return 3
         case .paymentCards:
             return 8
         case .transfer:
@@ -243,7 +245,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
             
-            if indexPath.row == 3 { // masivni oxirgi elementiga tekshirishingiz kk
+            if indexPath.row == 2 { // masivni oxirgi elementiga tekshirishingiz kk
                 cell.addCardMode()
                 return cell
             }
@@ -252,8 +254,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                 cell.imageView.image = UIImage(named: "BalanceImage1")
             case 1:
                 cell.imageView.image = UIImage(named: "BalanceImage2")
-            case 2:
-                cell.imageView.image = UIImage(named: "BalanceImage3")
+            
             default: break
                
             }
@@ -285,24 +286,30 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                 cell.imageView.image = UIImage(named: "MyHomeCellImage1")
                 cell.label1.text = "Mening uyim"
                 cell.label2.text = "Komunal to'lovlarni osonroq to'lang"
+                cell.button.setTitle("Batafsil", for: .normal)
+                cell.button.setTitleColor(.white, for: .normal)
+
             case 1:
                 cell.imageView.image = UIImage(named: "MyHomeCellImage2")
                 cell.label1.text = "Foydali mikroqarz"
                 cell.label2.text = "Qulay shartlarga ega tezkor onlayn mikroqarz, eng!"
+                cell.button.setTitle("Batafsil", for: .normal)
+                cell.button.setTitleColor(.white, for: .normal)
+
             case 2:
                 cell.imageView.image = UIImage(named: "MyHomeCellImage3")
                 cell.label1.text = "Qulay omonat"
                 cell.label2.text = " Yillik 23% stavkali qulay omonatni oching"
+                cell.button.setTitle("Batafsil", for: .normal)
+                cell.button.setTitleColor(.white, for: .normal)
+    
             default:
                 break
             }
             
-            
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
             
-            
-           
             
             return cell
         case .transactionHistory:
@@ -323,15 +330,41 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         case .balance:
             print(sectionType)
         case .paymentCards:
-//            switch indexPath.item {
-//            case 0:
-//            }
-            navigationController?.pushViewController(PayViewController(), animated: true)
+            switch indexPath.item {
+            case 0:
+                navigationController?.pushViewController(CardsViewController(), animated: true)
+            case 1:
+                navigationController?.pushViewController(OtkazmalarViewController(), animated: true)
+            case 2:
+                navigationController?.pushViewController(PayViewController(), animated: true)
+            case 3:
+                break
+            case 4:
+                navigationController?.pushViewController(ExchangeViewController(), animated: true)
+            case 5:
+                navigationController?.pushViewController(CreditsViewController(), animated: true)
+            case 6:
+                navigationController?.pushViewController(QRPaymentViewController(), animated: true)
+            case 7:
+                navigationController?.pushViewController(MeningArizalarimViewController(), animated: true)
+            default:
+                break
+            }
             
         case .transfer:
             print(sectionType)
         case .myhome:
-            print(sectionType)
+            switch indexPath.item {
+            case 0:
+                break
+            case 1:
+                navigationController?.pushViewController(CreditsViewController(), animated: true)
+            case 2:
+                navigationController?.pushViewController(OmonatViewController(), animated: true)
+            default:
+                break
+            }
+            
         case .transactionHistory:
             print(sectionType)
         }

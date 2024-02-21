@@ -33,7 +33,7 @@ final class BalanceCell:UICollectionViewCell {
             label.widthAnchor.constraint(equalToConstant: 100),
             label.heightAnchor.constraint(equalToConstant: 35),
         ])
-        label.text = "0.00 UZS"
+//        label.text = "0.00 UZS"
         
         
         addCardButon.setTitle("Add your card", for: .normal)

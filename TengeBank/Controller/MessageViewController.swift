@@ -14,6 +14,14 @@ final class MessageViewController :UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "chevron.left"),
+            style: .done,
+            target: self,
+            action: #selector(leftButtonTapped)
+        )
+        navigationItem.leftBarButtonItem?.tintColor = .black
+        
         view.backgroundColor = .white
         
         title = "Xabarnoma"
@@ -27,4 +35,8 @@ final class MessageViewController :UIViewController {
         button.tintColor = .appColor.primary
         
     }
+    @objc private func leftButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
 }
+
