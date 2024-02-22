@@ -7,10 +7,13 @@
 
 import UIKit
 
+
+
 final class TransactionHistoryCell:UICollectionViewCell {
      
     private let label = UILabel()
-    private let button = UIButton(type: .system)
+     let button = UIButton(type: .system)
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,8 +35,10 @@ final class TransactionHistoryCell:UICollectionViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true
         button.topAnchor.constraint(equalTo: topAnchor, constant: 15).isActive = true
+
     }
     
+   
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -140,6 +140,21 @@ extension HisobRaqamViewController: UICollectionViewDelegate, UICollectionViewDa
             return CGSize(width: itemWidth, height: itemWidth)
         }
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let sectionType = HisobRaqamSectionType(rawValue: indexPath.section) else { return }
+        switch sectionType {
+            
+        case .cards:
+            print(sectionType)
+        case .omonat:
+            navigationController?.pushViewController(OmonatViewController(), animated: true)
+        case .hisobRaqam:
+            print(sectionType)
+        case .credit:
+            navigationController?.pushViewController(CreditsViewController(), animated: true)
+        }
+    }
 }
 
 enum HisobRaqamSectionType: Int, CaseIterable {

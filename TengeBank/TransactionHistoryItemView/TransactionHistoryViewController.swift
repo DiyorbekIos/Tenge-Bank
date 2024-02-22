@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  TransactionHistoryViewController.swift
 //  TengeBank
 //
 //  Created by Turonboyev Diyorbek on 21/02/24.
@@ -7,13 +7,14 @@
 
 import UIKit
 
-final class MeningArizalarimViewController:UIViewController {
+final class  TransactionHistoryViewController:UIViewController {
     
     private let titleLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.tabBarController?.tabBar.isHidden = true
         createNavigation()
     }
     
@@ -28,8 +29,8 @@ final class MeningArizalarimViewController:UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = .black
         
         navigationItem.titleView = titleLabel
-        titleLabel.text = "Mening arizalarim"
-        titleLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        titleLabel.text = "O'tkazmalar tarixi"
+        titleLabel.font = .systemFont(ofSize: 24, weight: .bold)
         titleLabel.textAlignment = .left
         
         
@@ -38,4 +39,3 @@ final class MeningArizalarimViewController:UIViewController {
         navigationController?.popViewController(animated: true)
     }
 }
-

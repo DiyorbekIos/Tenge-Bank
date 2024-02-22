@@ -19,7 +19,10 @@
 		BD49DAFF2B862BA30002F284 /* MeningArizalarimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAFE2B862BA30002F284 /* MeningArizalarimViewController.swift */; };
 		BD49DB012B862C4B0002F284 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DB002B862C4B0002F284 /* ExchangeViewController.swift */; };
 		BD49DB032B862C930002F284 /* QRPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DB022B862C930002F284 /* QRPaymentViewController.swift */; };
+		BD49DB062B8655C20002F284 /* TransactionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DB052B8655C20002F284 /* TransactionHistoryViewController.swift */; };
 		BD5AA9D92B6D30F800743506 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5AA9D82B6D30F800743506 /* MainVC.swift */; };
+		BD6B58962B87194300E119A1 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B58952B87194300E119A1 /* AboutUsViewController.swift */; };
+		BD6B58992B8797B000E119A1 /* DeleteAkkauntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B58982B8797B000E119A1 /* DeleteAkkauntViewController.swift */; };
 		BD8309B82B6B779200952DD0 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8309B72B6B779200952DD0 /* PayViewController.swift */; };
 		BD8309BA2B6B77C500952DD0 /* AgainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8309B92B6B77C500952DD0 /* AgainViewController.swift */; };
 		BD8309BD2B6B792400952DD0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8309BC2B6B792400952DD0 /* UIColor.swift */; };
@@ -67,7 +70,10 @@
 		BD49DAFE2B862BA30002F284 /* MeningArizalarimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeningArizalarimViewController.swift; sourceTree = "<group>"; };
 		BD49DB002B862C4B0002F284 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		BD49DB022B862C930002F284 /* QRPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentViewController.swift; sourceTree = "<group>"; };
+		BD49DB052B8655C20002F284 /* TransactionHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryViewController.swift; sourceTree = "<group>"; };
 		BD5AA9D82B6D30F800743506 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		BD6B58952B87194300E119A1 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		BD6B58982B8797B000E119A1 /* DeleteAkkauntViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAkkauntViewController.swift; sourceTree = "<group>"; };
 		BD8309B72B6B779200952DD0 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		BD8309B92B6B77C500952DD0 /* AgainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgainViewController.swift; sourceTree = "<group>"; };
 		BD8309BC2B6B792400952DD0 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -187,6 +193,22 @@
 			path = PaymentCardsItemView;
 			sourceTree = "<group>";
 		};
+		BD49DB042B86558D0002F284 /* TransactionHistoryItemView */ = {
+			isa = PBXGroup;
+			children = (
+				BD49DB052B8655C20002F284 /* TransactionHistoryViewController.swift */,
+			);
+			path = TransactionHistoryItemView;
+			sourceTree = "<group>";
+		};
+		BD6B58972B87199C00E119A1 /* MoreTableItemView */ = {
+			isa = PBXGroup;
+			children = (
+				BD6B58952B87194300E119A1 /* AboutUsViewController.swift */,
+			);
+			name = MoreTableItemView;
+			sourceTree = "<group>";
+		};
 		BD8309BB2B6B78EF00952DD0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +281,7 @@
 			children = (
 				BD8309B92B6B77C500952DD0 /* AgainViewController.swift */,
 				BDA9ACB62B72127200527634 /* AgainTableViewCell.swift */,
+				BD6B58972B87199C00E119A1 /* MoreTableItemView */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -330,6 +353,7 @@
 		BDB803312B6AAD48005E8C9F /* TengeBank */ = {
 			isa = PBXGroup;
 			children = (
+				BD49DB042B86558D0002F284 /* TransactionHistoryItemView */,
 				BD49DAFB2B862B100002F284 /* PaymentCardsItemView */,
 				BD49DAF22B85DBB80002F284 /* Omonatlar */,
 				BD49DAE92B85C3630002F284 /* Kreditlar */,
@@ -384,6 +408,7 @@
 			children = (
 				BDE3267B2B7F2760007DB5A9 /* ProfileViewController.swift */,
 				BDE326822B80776E007DB5A9 /* ProfileTableViewCell.swift */,
+				BD6B58982B8797B000E119A1 /* DeleteAkkauntViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -512,16 +537,19 @@
 				BDFC39932B77C1CC00364A5B /* MyHomeCell.swift in Sources */,
 				BDE326702B7DEE68007DB5A9 /* OmonatCell.swift in Sources */,
 				BDFC39912B77C1BE00364A5B /* TransferCell.swift in Sources */,
+				BD6B58962B87194300E119A1 /* AboutUsViewController.swift in Sources */,
 				BD49DAFD2B862B3B0002F284 /* OtkazmalarViewController.swift in Sources */,
 				BD49DAFF2B862BA30002F284 /* MeningArizalarimViewController.swift in Sources */,
 				BD49DAF82B85DC480002F284 /* UsefulCell.swift in Sources */,
 				BDEA70982B83A0C300CF73DE /* OpenCardsCell.swift in Sources */,
 				BDE3268A2B838E26007DB5A9 /* CardsViewController.swift in Sources */,
 				BD8309C32B6B7E1300952DD0 /* TabbarVC.swift in Sources */,
+				BD6B58992B8797B000E119A1 /* DeleteAkkauntViewController.swift in Sources */,
 				BDFC39952B77C1E600364A5B /* TransactionHistoryCell.swift in Sources */,
 				BD5AA9D92B6D30F800743506 /* MainVC.swift in Sources */,
 				BDE326742B7DEE88007DB5A9 /* KreditCell.swift in Sources */,
 				BDFC398B2B77B0F000364A5B /* StoryCell.swift in Sources */,
+				BD49DB062B8655C20002F284 /* TransactionHistoryViewController.swift in Sources */,
 				BD49DAF42B85DBDE0002F284 /* OmonatViewController.swift in Sources */,
 				BDB803332B6AAD48005E8C9F /* AppDelegate.swift in Sources */,
 				BDA9ACB72B72127200527634 /* AgainTableViewCell.swift in Sources */,

@@ -49,14 +49,21 @@ class AgainViewController: UIViewController {
     }
     
     @objc private func leavePressed() {
+        let alert = UIAlertController(title: "", message: "Haqiqatdan ham ilovadan chiqmoqchimisiz?", preferredStyle: UIAlertController.Style.alert)
         
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Ha", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yo'q", style: UIAlertAction.Style.cancel, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
 
 extension AgainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return 9
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,10 +92,13 @@ extension AgainViewController: UITableViewDelegate, UITableViewDataSource {
             cell.button.setImage(UIImage(systemName: "car"), for: .normal)
         case 6:
             cell.titleLabel.text = "Mening uyim"
-            cell.button.setImage(UIImage(systemName: "house"), for: .normal)
+            cell.button.setImage(UIImage(systemName:"house"), for: .normal)
         case 7:
             cell.titleLabel.text = "Davlat xizmatlari"
             cell.button.setImage(UIImage(systemName: "house.and.flag"), for: .normal)
+        case 8:
+            cell.titleLabel.text = "Mening arizalarim"
+            cell.button.setImage(UIImage(systemName: "doc.plaintext"), for: .normal)
         default:
             return UITableViewCell()
         }
@@ -104,5 +114,28 @@ extension AgainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+            
+        case 0:
+            navigationController?.pushViewController(ProfileViewController(), animated: true)
+        case 1:
+            break
+        case 2:
+            navigationController?.pushViewController(AboutUsViewController(), animated: true)
+        case 3:
+            break
+        case 4:
+            break
+        case 5:
+            break
+        case 6:
+            break
+        case 7:
+            break
+        case 8:
+            navigationController?.pushViewController(MeningArizalarimViewController(), animated: true)
+        default:
+            break
+        }
     }
 }

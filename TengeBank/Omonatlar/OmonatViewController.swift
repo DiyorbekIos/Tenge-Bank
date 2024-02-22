@@ -30,6 +30,7 @@ final class OmonatViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.tabBarController?.tabBar.isHidden = true
         createNavigation()
         view.addSubview(collectionView)
     }

@@ -333,12 +333,14 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             switch indexPath.item {
             case 0:
                 navigationController?.pushViewController(CardsViewController(), animated: true)
+            
             case 1:
                 navigationController?.pushViewController(OtkazmalarViewController(), animated: true)
+                
             case 2:
                 navigationController?.pushViewController(PayViewController(), animated: true)
             case 3:
-                break
+                navigationController?.pushViewController(DeleteAkkauntViewController(), animated: true)
             case 4:
                 navigationController?.pushViewController(ExchangeViewController(), animated: true)
             case 5:
@@ -354,20 +356,23 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         case .transfer:
             print(sectionType)
         case .myhome:
-            switch indexPath.item {
-            case 0:
+            guard let cellType = HomeCellType(rawValue: indexPath.item) else { return }
+            switch cellType {
+            case .home:
                 break
-            case 1:
+            case .depozit:
+//                let vc = CreditsViewController()
+//                vc.modalPresentationStyle = .fullScreen
+//                present(vc, animated: true)
                 navigationController?.pushViewController(CreditsViewController(), animated: true)
-            case 2:
+            case .loan:
                 navigationController?.pushViewController(OmonatViewController(), animated: true)
-            default:
-                break
             }
             
         case .transactionHistory:
-            print(sectionType)
+            navigationController?.pushViewController(TransactionHistoryViewController(), animated: true)
         }
+
     }
 }
 
@@ -376,14 +381,16 @@ extension MainVC: HomeCellDelegate {
     func didPressedMore(_ type: HomeCellType) {
         switch type {
         case .home:
-            break
+            print("skckdscnsd")
         case .loan:
-            break
+            print("skckdscnsd")
         case .depozit:
-            break
+            print("skckdscnsd")
         }
     }
 }
+
+
 
 
 enum HomeSectionType: Int, CaseIterable {

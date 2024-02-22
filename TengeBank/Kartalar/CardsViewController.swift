@@ -31,6 +31,7 @@ final class  CardsViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         view.addSubview(collectionView)
         
         createNavigation()
