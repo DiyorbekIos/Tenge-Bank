@@ -38,6 +38,11 @@ class AgainViewController: UIViewController {
         tableView.register(AgainTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     private func createButton() {
         
         let button = UIButton(type: .system)

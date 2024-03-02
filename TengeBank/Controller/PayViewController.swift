@@ -33,12 +33,21 @@ class PayViewController: UIViewController {
 
         view.addSubview(collectionView)
         
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.searchBar.placeholder = "Siz izlayotgan to'lov turi"
+//        navigationItem.searchController = searchController
+//        definesPresentationContext = true
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Siz izlayotgan to'lov turi"
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        
     }
+
+   
     
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (

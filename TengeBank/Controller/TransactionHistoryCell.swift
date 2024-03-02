@@ -7,9 +7,23 @@
 
 import UIKit
 
+enum TransactionHistoryType {
+    case batafsil
+}
 
+protocol TransactionHistoryDelegate: AnyObject {
+    func didPressedMore(_ type: TransactionHistoryType)
+}
 
 final class TransactionHistoryCell:UICollectionViewCell {
+    
+    
+    var nmadrPressed: ((TransactionHistoryType) -> ())?
+    
+    weak var delegate: TransactionHistoryDelegate?
+    
+    var type: TransactionHistoryType = .batafsil
+    
      
     private let label = UILabel()
      let button = UIButton(type: .system)
@@ -36,6 +50,8 @@ final class TransactionHistoryCell:UICollectionViewCell {
         button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true
         button.topAnchor.constraint(equalTo: topAnchor, constant: 15).isActive = true
 
+        contentView.backgroundColor = .white
+        contentView.layer.cornerRadius = 10
     }
     
    

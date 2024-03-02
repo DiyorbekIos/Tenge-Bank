@@ -14,17 +14,9 @@ class TransferViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemGray6
         createLabel()
         
-        view.backgroundColor = .systemGray6
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "chevron.left"),
-            style: .done,
-            target: self,
-            action: #selector(leftButtonTapped)
-        )
-        navigationItem.leftBarButtonItem?.tintColor = .black
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false

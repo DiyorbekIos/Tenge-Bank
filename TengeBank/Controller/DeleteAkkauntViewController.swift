@@ -12,9 +12,12 @@ final class DeleteAkkauntViewController:UIViewController {
     private let titleLabel = UILabel()
     private let label  = UILabel ()
     private let textfield = UITextField()
-    private let showSecure = UIButton(type: .system)
-    
-    private var isSecureTextEntry = true
+    var showSecure = UIButton(type: .system)
+    var isSecureTextEntry = true
+    var isButtonSelected = true
+    private let  button = UIButton(type: .system)
+
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,8 @@ final class DeleteAkkauntViewController:UIViewController {
         createNavigation()
         setTitle()
         setTextFied()
+        createButton()
+        
     }
     
     private func createNavigation() {
@@ -46,7 +51,7 @@ final class DeleteAkkauntViewController:UIViewController {
     @objc private func leftButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
-    
+                                     
     private func setTitle() {
         view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +78,7 @@ final class DeleteAkkauntViewController:UIViewController {
         textfield.layer.cornerRadius = 8
         
         
-        textfield.addSubview(showSecure)
+        view.addSubview(showSecure)
         showSecure.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             showSecure.trailingAnchor.constraint(equalTo: textfield.trailingAnchor, constant: -20),
@@ -81,15 +86,39 @@ final class DeleteAkkauntViewController:UIViewController {
             showSecure.centerYAnchor.constraint(equalTo: textfield.centerYAnchor)
         ])
         showSecure.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        showSecure.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
         showSecure.tintColor = .appColor.primary
         showSecure.addTarget(self, action: #selector(showTapped), for: .touchUpInside)
         
         
     }
     
+    
     @objc func showTapped( ) {
         isSecureTextEntry.toggle()
         textfield.isSecureTextEntry = isSecureTextEntry
+        isButtonSelected.toggle()
+        
+        if isButtonSelected {
+            showSecure.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        } else {
+            showSecure.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        }
+       
+    }
+    
+    private func createButton() {
+        view.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
+            button.heightAnchor.constraint(equalToConstant: 50),
+            button.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 60)
+        ])
+        button.setTitle("Keyingi", for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = .appColor.primary
+        button.layer.cornerRadius = 8
     }
 }
+

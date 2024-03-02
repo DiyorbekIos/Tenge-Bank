@@ -34,8 +34,11 @@ final class MeningArizalarimViewController:UIViewController {
         
         
     }
+    
     @objc private func leftButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
+    
+    
 }
 

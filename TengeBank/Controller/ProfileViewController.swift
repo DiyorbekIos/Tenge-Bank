@@ -18,7 +18,7 @@ final class ProfileViewController:UIViewController {
     private let languageButton = UIButton(type: .system)
     private let copyButton  = UIButton(type: .system)
     private let numberLabel = UILabel()
-    private  let imagePicker =  UIImagePickerController()
+    private  let picker =  UIImagePickerController()
     private let imageView = UIImageView()
 
     
@@ -33,6 +33,7 @@ final class ProfileViewController:UIViewController {
             action: #selector(leftButtonTapped)
         )
         navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationController?.navigationBar.prefersLargeTitles = false
         
         view.backgroundColor = .systemGray6
         createAddImageButton ()
@@ -70,7 +71,7 @@ final class ProfileViewController:UIViewController {
         ])
         addImageButton.setImage(UIImage(systemName: "person.crop.circle.fill.badge.plus"), for: .normal)
         addImageButton.tintColor = .appColor.primary
-        addImageButton.layer.cornerRadius = 3
+        addImageButton.layer.cornerRadius = 15
         addImageButton.layer.borderWidth = 0.5
         addImageButton.layer.borderColor = UIColor.orange.cgColor
         addImageButton.addTarget(self, action: #selector(addImageButtonTapped), for: .touchUpInside)
@@ -85,7 +86,8 @@ final class ProfileViewController:UIViewController {
             imageView.topAnchor.constraint(equalTo: addImageButton.topAnchor, constant: 0),
             imageView.bottomAnchor.constraint(equalTo: addImageButton.bottomAnchor, constant: 0)
         ])
-        imageView.layer.cornerRadius  = .zero
+        imageView.layer.cornerRadius  = 15
+        imageView.clipsToBounds = true
        
     }
     
@@ -192,6 +194,7 @@ final class ProfileViewController:UIViewController {
             self.languageButton.setTitle("En", for: .normal)
         }
 
+       
         let option3 = UIAlertAction(title: "O'zbekcha", style: .default) { _ in
             self.languageButton.setTitle("Uz", for: .normal)
         }
@@ -220,8 +223,10 @@ final class ProfileViewController:UIViewController {
         let alert = UIAlertController(title: "", message: "Haqiqatdan ham profilingizni o'chirmoqchimisiz", preferredStyle: UIAlertController.Style.alert)
         
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Ha", style: UIAlertAction.Style.default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Yo'q", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yo'q", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "HA", style: UIAlertAction.Style.default, handler: { _ in
+            self.navigationController?.pushViewController(DeleteAkkauntViewController(), animated: true)
+        }))
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
@@ -229,14 +234,9 @@ final class ProfileViewController:UIViewController {
     
     
     @objc private  func addImageButtonTapped() {
-        self.imagePicker.delegate = self
-        self.imagePicker.allowsEditing = false
-        self.imagePicker.mediaTypes = ["public.image","public.movie"]
-        
-        DispatchQueue.main.async { [weak self ] in
-            guard let self = self else {return}
-            self.present(self.imagePicker, animated: true, completion:nil)
-        }
+        picker.sourceType = .camera
+        picker.delegate = self
+        present(picker,animated: true)
     }
 }
 
@@ -282,27 +282,58 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource {
     
 }
 
-
 extension ProfileViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        if info[.mediaType] as? String == "public.image" {
-            self.handlePhoto(info)
-        } else if info[.mediaType] as? String == "public.movie" {
-            
-        } else {
-            print ("DEBUG PRINT:", "Media was neither Image or Video.")
-        }
-        
-        DispatchQueue.main.async { [weak self ] in
-            self?.dismiss (animated: true, completion: nil)
-        }
+    
+    func imagePickerController(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true,completion: nil)
     }
     
-        // MARK: -  images
-     private func handlePhoto(_ info:[UIImagePickerController.InfoKey : Any]) {
-            if let image = info[.originalImage] as? UIImage {
-                self.imageView.image = image
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
+        picker.dismiss(animated: true,completion: nil)
+        
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            return
         }
+        
+        imageView.image = image
     }
 }
+
+//extension ProfileViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        
+//        if info[.mediaType] as? String == "public.image" {
+//            self.handlePhoto(info)
+//        } else if info[.mediaType] as? String == "public.movie" {
+//            
+//        } else {
+//            print ("DEBUG PRINT:", "Media was neither Image or Video.")
+//        }
+//        
+//        DispatchQueue.main.async { [weak self ] in
+//            self?.dismiss (animated: true, completion: nil)
+//        }
+//    }
+//    
+//        // MARK: -  images
+//     private func handlePhoto(_ info:[UIImagePickerController.InfoKey : Any]) {
+//            if let image = info[.originalImage] as? UIImage {
+//                self.imageView.image = image
+//        }
+//    }
+//}
+
+
+
+//@objc private  func addImageButtonTapped() {
+//    self.imagePicker.delegate = self
+//    self.imagePicker.allowsEditing = false
+//    self.imagePicker.mediaTypes = ["public.image","public.movie"]
+//    
+//    DispatchQueue.main.async { [weak self ] in
+//        guard let self = self else {return}
+//        self.present(self.imagePicker, animated: true, completion:nil)
+//    }
+//}

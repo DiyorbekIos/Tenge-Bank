@@ -1,5 +1,5 @@
 //
-//  MyHomeCell.swift
+//  MyHomeswift
 //  TengeBank
 //
 //  Created by Turonboyev Diyorbek on 10/02/24.
@@ -66,7 +66,8 @@ final class MyHomeCell: UICollectionViewCell {
         label2.textColor = .white
         label2.font = .systemFont(ofSize: 16)
         label2.numberOfLines = 2
-        
+        backgroundColor = .white
+        layer.cornerRadius = 10
         createButton()
     }
     
@@ -86,6 +87,34 @@ final class MyHomeCell: UICollectionViewCell {
         ])
         
         button.addTarget(self, action: #selector(morePressed), for: .touchUpInside)
+    }
+    
+    func prepare(cellType: HomeCellType) {
+        type = cellType
+        switch cellType {
+        case .home:
+            imageView.image = UIImage(named: "MyHomeCellImage1")
+            label1.text = "Mening uyim"
+            label2.text = "Komunal to'lovlarni osonroq to'lang"
+            button.setTitle("Batafsil", for: .normal)
+            button.setTitleColor(.white, for: .normal)
+            type = cellType
+            
+        case .loan:
+            imageView.image = UIImage(named: "MyHomeCellImage2")
+            label1.text = "Foydali mikroqarz"
+            label2.text = "Qulay shartlarga ega tezkor onlayn mikroqarz, eng!"
+            button.setTitle("Batafsil", for: .normal)
+            button.setTitleColor(.white, for: .normal)
+            
+        case .depozit:
+            imageView.image = UIImage(named: "MyHomeCellImage3")
+            label1.text = "Qulay omonat"
+            label2.text = " Yillik 23% stavkali qulay omonatni oching"
+            button.setTitle("Batafsil", for: .normal)
+            button.setTitleColor(.white, for: .normal)
+        }
+
     }
     
     @objc private func morePressed() {

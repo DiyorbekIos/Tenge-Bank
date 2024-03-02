@@ -53,6 +53,9 @@ enum PaymentCardsType: Int {
         override init(frame: CGRect) {
             super.init(frame: frame)
             
+            contentView.backgroundColor = .white
+            contentView.layer.cornerRadius = 10
+            
             contentView.addSubview(imageView)
             imageView.layer.cornerRadius = 8
             imageView.layer.borderWidth = 0.4
@@ -85,6 +88,7 @@ enum PaymentCardsType: Int {
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
+        
         
         func prepare(type: PaymentCardsType) {
             imageView.image = UIImage(systemName: type.getImage())
