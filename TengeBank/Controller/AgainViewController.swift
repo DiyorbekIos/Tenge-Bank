@@ -26,10 +26,10 @@ class AgainViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
         ])
         
         tableView.layer.cornerRadius = 8
@@ -41,6 +41,7 @@ class AgainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = true
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private func createButton() {
@@ -128,15 +129,15 @@ extension AgainViewController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             navigationController?.pushViewController(AboutUsViewController(), animated: true)
         case 3:
-            break
+            navigationController?.pushViewController(SecurityViewController(), animated: true)
         case 4:
             break
         case 5:
-            break
+            navigationController?.pushViewController(UzautoViewController(), animated: true)
         case 6:
-            break
+            navigationController?.pushViewController(AddHomeViewController(), animated: true)
         case 7:
-            break
+            navigationController?.pushViewController(PublicServiceViewController(), animated: true)
         case 8:
             navigationController?.pushViewController(MeningArizalarimViewController(), animated: true)
         default:

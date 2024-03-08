@@ -45,6 +45,7 @@ class PayViewController: UIViewController {
         searchController.searchBar.placeholder = "Siz izlayotgan to'lov turi"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        self.tabBarController?.tabBar.isHidden = false
     }
 
    
@@ -101,6 +102,29 @@ extension PayViewController:UICollectionViewDelegate,UICollectionViewDataSource,
         cell.prepare(type: cellType)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            break
+        case 1:
+            navigationController?.pushViewController(ElectriCity(), animated: true)
+        case 2:
+            break
+        case 3:
+            navigationController?.pushViewController(Internet(), animated: true)
+        case 4:
+            break
+        case 5:
+            break
+        case 6:
+            break
+        case 7:
+            break
+        default:
+            break
+        }
     }
 }
 

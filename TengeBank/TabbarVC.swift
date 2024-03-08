@@ -46,7 +46,7 @@ class TabbarVC: UITabBarController {
 
         
         viewControllers = [profileVC,hisobVC,transferVC,payVC,againVC]
-        selectedIndex = 0
+        selectedIndex = 3
         tabBar.backgroundColor = .white
         tabBar.layer.borderWidth = 0.5
         tabBar.layer.borderColor = UIColor.init(named: "white")?.cgColor

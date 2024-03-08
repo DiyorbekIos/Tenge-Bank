@@ -35,6 +35,11 @@ class HisobRaqamViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (
@@ -101,6 +106,7 @@ extension HisobRaqamViewController: UICollectionViewDelegate, UICollectionViewDa
             cell.button2.setTitle("Ko'proq ko'rsatish", for: .normal)
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 10
+            cell.delegate = self
             return cell
             
         case .omonat:
@@ -162,4 +168,16 @@ enum HisobRaqamSectionType: Int, CaseIterable {
     case omonat
     case hisobRaqam
     case credit
+}
+
+extension HisobRaqamViewController:KartaCellDelegate {
+    func didPressedMore(_ type: KartaCellType) {
+        switch type {
+            
+        case .button1:
+            navigationController?.pushViewController(AddCardViewController(), animated: true)
+        case .button2:
+            navigationController?.pushViewController(CardsViewController(), animated: true)
+        }
+    }
 }

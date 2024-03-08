@@ -7,43 +7,49 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        Home()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
 struct Home: View {
+    
+    let close: () -> ()
+    
     var body: some View {
-        TabView {
-            ForEach(data) { story in
-                GeometryReader { g in
-                    ZStack {
-                        LinearGradient(gradient: .init(colors: [Color("top"), story.color]), startPoint: .top, endPoint: .bottomTrailing)
-                            .cornerRadius(10)
-                        
-                        Image(story.story)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .padding(.horizontal)
-                            .rotation3DEffect(.degrees(getAngle(xOffset: g.frame(in: .global).minX)), axis: (x: 0, y: 1, z: 0))
-                        
-                        VStack(alignment: .leading, spacing: 12) {
-                            // Other content
+            
+            TabView {
+                ForEach(data) { story in
+                    GeometryReader { g in
+                        ZStack {
+                            LinearGradient(gradient: .init(colors: [Color("top"), story.color]), startPoint: .top, endPoint: .bottomTrailing)
+                                .cornerRadius(10)
+                            
+                            Image(story.story)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .padding(.horizontal)
+                                .rotation3DEffect(.degrees(getAngle(xOffset: g.frame(in: .global).minX)), axis: (x: 0, y: 1, z: 0))
+                            
+                            VStack(alignment: .leading, spacing: 12) {
+                                // Other content
+                            }
+                            .padding(.all)
                         }
-                        .padding(.all)
+                        .frame(width: g.frame(in: .global).width, height: g.frame(in: .global).height)
                     }
-                    .frame(width: g.frame(in: .global).width, height: g.frame(in: .global).height)
                 }
             }
-        }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        .background(Color.black.edgesIgnoringSafeArea(.all))
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .background(Color.black.edgesIgnoringSafeArea(.all))
+            .overlay(alignment: .topTrailing) {
+                Button(action: close) {
+                    Image(systemName: "xmark")
+                        .resizable()
+                        .frame(width: 10, height: 10, alignment: .top)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.gray)
+                        .clipShape(.circle)
+                        .padding(.top, 10)
+                        .padding(.trailing, 10)
+                }
+            }
     }
 }
 

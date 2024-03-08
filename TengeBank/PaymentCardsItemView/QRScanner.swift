@@ -8,6 +8,7 @@
 import SwiftUI
 import AVKit
 
+
 struct ScannerView: View {
     
     // Qr Code Scanner Properties...
@@ -32,14 +33,14 @@ struct ScannerView: View {
         
         VStack(spacing:8){
             
-            Button{
-                
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.title3)
-                    .foregroundColor(/*Color("Blue")*/.blue)
-            }
-            .frame(maxWidth: .infinity,alignment: .leading)
+//            Button{
+//                
+//            } label: {
+//                Image(systemName: "xmark")
+//                    .font(.title3)
+//                    .foregroundColor(/*Color("Blue")*/.blue)
+//            }
+//            .frame(maxWidth: .infinity,alignment: .leading)
             
             Text("Place the Qr Code  code insede area")
                 .font(.title3)
@@ -230,13 +231,6 @@ struct ScannerView: View {
         showError.toggle()
     }
 }
-
-struct ScannerView_Previews:PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
 //Camera View Using AvCaptureVideoPreviewLayer
 
 struct CameraView:UIViewRepresentable {

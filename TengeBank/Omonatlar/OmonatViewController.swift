@@ -35,6 +35,7 @@ final class OmonatViewController:UIViewController {
         view.addSubview(collectionView)
     }
     
+    
     private func createNavigation() {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(
@@ -107,6 +108,12 @@ final class OmonatViewController:UIViewController {
             }
         }
         return layout
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
 }
 

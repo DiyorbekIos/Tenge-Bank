@@ -7,12 +7,27 @@
 
 import UIKit
 
+enum KartaCellType:Int {
+    case button1
+    case button2
+}
+
+protocol KartaCellDelegate: AnyObject {
+    func didPressedMore(_ type: KartaCellType)
+}
+
 final class KartaCell:UICollectionViewCell {
     
     private let titleLabel = UILabel()
     private let tableView = UITableView()
      let button = UIButton(type: .system)
     let button2 = UIButton(type: .system)
+    
+    var nmadrPressed: ((KartaCellType) -> ())?
+    
+    weak var delegate: KartaCellDelegate?
+    
+    var type: KartaCellType = .button1
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,6 +69,7 @@ final class KartaCell:UICollectionViewCell {
         button.setTitleColor(.appColor.primary, for: .normal)
         button.tintColor = .appColor.primary
         button.backgroundColor = .systemGray6
+        button.addTarget(self, action: #selector(morePressed), for: .touchUpInside)
         
         contentView.addSubview(button2)
         button2.translatesAutoresizingMaskIntoConstraints = false
@@ -64,9 +80,11 @@ final class KartaCell:UICollectionViewCell {
             button2.heightAnchor.constraint(equalToConstant: 25)
         ])
         button2.setTitleColor(.appColor.primary, for: .normal)
-        
-        
-        
+        button2.addTarget(self, action: #selector(morePressed), for: .touchUpInside)
+    }
+    @objc private func morePressed() {
+        delegate?.didPressedMore(type)
+        nmadrPressed?(type)
     }
     
     required init?(coder: NSCoder) {
@@ -106,3 +124,6 @@ extension KartaCell:UITableViewDelegate,UITableViewDataSource {
     }
     
 }
+
+
+

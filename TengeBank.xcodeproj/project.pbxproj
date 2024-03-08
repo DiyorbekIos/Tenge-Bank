@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		BD0B86052B906EA400A2A78E /* SelectCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0B86042B906EA400A2A78E /* SelectCountViewController.swift */; };
+		BD2BDCCE2B947DD60045A823 /* ReliableDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDCCD2B947DD60045A823 /* ReliableDeviceViewController.swift */; };
+		BD2BDCD02B94A0A80045A823 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDCCF2B94A0A80045A823 /* ChangePasswordViewController.swift */; };
+		BD2BDCEE2B9660EF0045A823 /* NumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDCED2B9660EF0045A823 /* NumberPad.swift */; };
+		BD2BDCF02B96BB6C0045A823 /* ChangeNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDCEF2B96BB6C0045A823 /* ChangeNumberViewController.swift */; };
+		BD2BDCF22B96E3A50045A823 /* UzautoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDCF12B96E3A50045A823 /* UzautoViewController.swift */; };
+		BD2BDCF42B96F9F70045A823 /* PublicServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDCF32B96F9F70045A823 /* PublicServiceViewController.swift */; };
+		BD2BDCF72B96FF4F0045A823 /* PublicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDCF62B96FF4F0045A823 /* PublicCell.swift */; };
+		BD2BDCFC2B9713170045A823 /* BirthCertificateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDCFB2B9713170045A823 /* BirthCertificateViewController.swift */; };
+		BD2BDCFE2B9713730045A823 /* InformationAboutMarriage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDCFD2B9713730045A823 /* InformationAboutMarriage.swift */; };
+		BD2BDD002B9713CC0045A823 /* InformationAboutDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDCFF2B9713CC0045A823 /* InformationAboutDecision.swift */; };
+		BD2BDD022B9714110045A823 /* AboutRealEstate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDD012B9714110045A823 /* AboutRealEstate.swift */; };
+		BD2BDD042B97148C0045A823 /* AboutTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDD032B97148C0045A823 /* AboutTransport.swift */; };
+		BD2BDD082B973EF90045A823 /* ElectriCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDD072B973EF90045A823 /* ElectriCity.swift */; };
+		BD2BDD0A2B9740970045A823 /* ElectriCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDD092B9740970045A823 /* ElectriCityCell.swift */; };
+		BD2BDD0D2B976B730045A823 /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDD0C2B976B730045A823 /* Internet.swift */; };
+		BD2BDD0F2B976BF10045A823 /* InternetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BDD0E2B976BF10045A823 /* InternetCell.swift */; };
 		BD49DAE62B84C8420002F284 /* MyCardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAE52B84C8420002F284 /* MyCardsCell.swift */; };
 		BD49DAE82B84FF2F0002F284 /* MyCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAE72B84FF2F0002F284 /* MyCardsTableViewCell.swift */; };
 		BD49DAEB2B85C3920002F284 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49DAEA2B85C3920002F284 /* CreditsViewController.swift */; };
@@ -26,6 +42,8 @@
 		BD6B58962B87194300E119A1 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B58952B87194300E119A1 /* AboutUsViewController.swift */; };
 		BD6B58992B8797B000E119A1 /* DeleteAkkauntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B58982B8797B000E119A1 /* DeleteAkkauntViewController.swift */; };
 		BD7D487F2B9388D400B094EF /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D487E2B9388D400B094EF /* QRScanner.swift */; };
+		BD7D48822B945D4100B094EF /* SecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D48812B945D4100B094EF /* SecurityViewController.swift */; };
+		BD7D48852B94607900B094EF /* SecurityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D48842B94607900B094EF /* SecurityCell.swift */; };
 		BD8309B82B6B779200952DD0 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8309B72B6B779200952DD0 /* PayViewController.swift */; };
 		BD8309BA2B6B77C500952DD0 /* AgainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8309B92B6B77C500952DD0 /* AgainViewController.swift */; };
 		BD8309BD2B6B792400952DD0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8309BC2B6B792400952DD0 /* UIColor.swift */; };
@@ -66,6 +84,22 @@
 
 /* Begin PBXFileReference section */
 		BD0B86042B906EA400A2A78E /* SelectCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountViewController.swift; sourceTree = "<group>"; };
+		BD2BDCCD2B947DD60045A823 /* ReliableDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReliableDeviceViewController.swift; sourceTree = "<group>"; };
+		BD2BDCCF2B94A0A80045A823 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		BD2BDCED2B9660EF0045A823 /* NumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPad.swift; sourceTree = "<group>"; };
+		BD2BDCEF2B96BB6C0045A823 /* ChangeNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNumberViewController.swift; sourceTree = "<group>"; };
+		BD2BDCF12B96E3A50045A823 /* UzautoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UzautoViewController.swift; sourceTree = "<group>"; };
+		BD2BDCF32B96F9F70045A823 /* PublicServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicServiceViewController.swift; sourceTree = "<group>"; };
+		BD2BDCF62B96FF4F0045A823 /* PublicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicCell.swift; sourceTree = "<group>"; };
+		BD2BDCFB2B9713170045A823 /* BirthCertificateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthCertificateViewController.swift; sourceTree = "<group>"; };
+		BD2BDCFD2B9713730045A823 /* InformationAboutMarriage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAboutMarriage.swift; sourceTree = "<group>"; };
+		BD2BDCFF2B9713CC0045A823 /* InformationAboutDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAboutDecision.swift; sourceTree = "<group>"; };
+		BD2BDD012B9714110045A823 /* AboutRealEstate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRealEstate.swift; sourceTree = "<group>"; };
+		BD2BDD032B97148C0045A823 /* AboutTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTransport.swift; sourceTree = "<group>"; };
+		BD2BDD072B973EF90045A823 /* ElectriCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectriCity.swift; sourceTree = "<group>"; };
+		BD2BDD092B9740970045A823 /* ElectriCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectriCityCell.swift; sourceTree = "<group>"; };
+		BD2BDD0C2B976B730045A823 /* Internet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Internet.swift; sourceTree = "<group>"; };
+		BD2BDD0E2B976BF10045A823 /* InternetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetCell.swift; sourceTree = "<group>"; };
 		BD49DAE52B84C8420002F284 /* MyCardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsCell.swift; sourceTree = "<group>"; };
 		BD49DAE72B84FF2F0002F284 /* MyCardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsTableViewCell.swift; sourceTree = "<group>"; };
 		BD49DAEA2B85C3920002F284 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +118,8 @@
 		BD6B58952B87194300E119A1 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		BD6B58982B8797B000E119A1 /* DeleteAkkauntViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAkkauntViewController.swift; sourceTree = "<group>"; };
 		BD7D487E2B9388D400B094EF /* QRScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanner.swift; sourceTree = "<group>"; };
+		BD7D48812B945D4100B094EF /* SecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityViewController.swift; sourceTree = "<group>"; };
+		BD7D48842B94607900B094EF /* SecurityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityCell.swift; sourceTree = "<group>"; };
 		BD8309B72B6B779200952DD0 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		BD8309B92B6B77C500952DD0 /* AgainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgainViewController.swift; sourceTree = "<group>"; };
 		BD8309BC2B6B792400952DD0 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -140,9 +176,66 @@
 			children = (
 				BD49DB002B862C4B0002F284 /* ExchangeViewController.swift */,
 				BD0B86042B906EA400A2A78E /* SelectCountViewController.swift */,
-				BD7D487E2B9388D400B094EF /* QRScanner.swift */,
 			);
 			path = exchange;
+			sourceTree = "<group>";
+		};
+		BD2BDCCC2B947DA60045A823 /* SecurityView */ = {
+			isa = PBXGroup;
+			children = (
+				BD2BDCCD2B947DD60045A823 /* ReliableDeviceViewController.swift */,
+				BD2BDCCF2B94A0A80045A823 /* ChangePasswordViewController.swift */,
+				BD2BDCED2B9660EF0045A823 /* NumberPad.swift */,
+				BD2BDCEF2B96BB6C0045A823 /* ChangeNumberViewController.swift */,
+			);
+			name = SecurityView;
+			sourceTree = "<group>";
+		};
+		BD2BDCF52B96FF340045A823 /* PublicService */ = {
+			isa = PBXGroup;
+			children = (
+				BD2BDCFA2B9712B80045A823 /* PublicServuceView */,
+				BD2BDCF32B96F9F70045A823 /* PublicServiceViewController.swift */,
+				BD2BDCF62B96FF4F0045A823 /* PublicCell.swift */,
+			);
+			name = PublicService;
+			sourceTree = "<group>";
+		};
+		BD2BDCFA2B9712B80045A823 /* PublicServuceView */ = {
+			isa = PBXGroup;
+			children = (
+				BD2BDCFB2B9713170045A823 /* BirthCertificateViewController.swift */,
+				BD2BDCFD2B9713730045A823 /* InformationAboutMarriage.swift */,
+				BD2BDCFF2B9713CC0045A823 /* InformationAboutDecision.swift */,
+				BD2BDD012B9714110045A823 /* AboutRealEstate.swift */,
+				BD2BDD032B97148C0045A823 /* AboutTransport.swift */,
+			);
+			name = PublicServuceView;
+			sourceTree = "<group>";
+		};
+		BD2BDD052B971EFC0045A823 /* HisobRaqamView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HisobRaqamView;
+			sourceTree = "<group>";
+		};
+		BD2BDD062B973EA40045A823 /* elektr energiya */ = {
+			isa = PBXGroup;
+			children = (
+				BD2BDD072B973EF90045A823 /* ElectriCity.swift */,
+				BD2BDD092B9740970045A823 /* ElectriCityCell.swift */,
+			);
+			name = "elektr energiya";
+			sourceTree = "<group>";
+		};
+		BD2BDD0B2B976B540045A823 /* Internet */ = {
+			isa = PBXGroup;
+			children = (
+				BD2BDD0C2B976B730045A823 /* Internet.swift */,
+				BD2BDD0E2B976BF10045A823 /* InternetCell.swift */,
+			);
+			name = Internet;
 			sourceTree = "<group>";
 		};
 		BD49DAE42B84C70C0002F284 /* myCards */ = {
@@ -212,6 +305,7 @@
 				BD9EB13D2B8B3DAA0000E55D /* Otkazma */,
 				BD49DAFE2B862BA30002F284 /* MeningArizalarimViewController.swift */,
 				BD49DB022B862C930002F284 /* QRPaymentViewController.swift */,
+				BD7D487E2B9388D400B094EF /* QRScanner.swift */,
 			);
 			path = PaymentCardsItemView;
 			sourceTree = "<group>";
@@ -227,9 +321,30 @@
 		BD6B58972B87199C00E119A1 /* MoreTableItemView */ = {
 			isa = PBXGroup;
 			children = (
+				BD2BDCF52B96FF340045A823 /* PublicService */,
+				BD7D48832B94606500B094EF /* security */,
 				BD6B58952B87194300E119A1 /* AboutUsViewController.swift */,
+				BD2BDCF12B96E3A50045A823 /* UzautoViewController.swift */,
 			);
 			name = MoreTableItemView;
+			sourceTree = "<group>";
+		};
+		BD7D48802B938EA200B094EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BDB803322B6AAD48005E8C9F /* AppDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BD7D48832B94606500B094EF /* security */ = {
+			isa = PBXGroup;
+			children = (
+				BD2BDCCC2B947DA60045A823 /* SecurityView */,
+				BD7D48812B945D4100B094EF /* SecurityViewController.swift */,
+				BD7D48842B94607900B094EF /* SecurityCell.swift */,
+			);
+			name = security;
 			sourceTree = "<group>";
 		};
 		BD8309BB2B6B78EF00952DD0 /* Extensions */ = {
@@ -272,6 +387,7 @@
 		BD8309CB2B6CBBE800952DD0 /* HisobRaqamlar */ = {
 			isa = PBXGroup;
 			children = (
+				BD2BDD052B971EFC0045A823 /* HisobRaqamView */,
 				BDE3266C2B7DEDC7007DB5A9 /* KartaCell */,
 				BDE3266B2B7DEDBB007DB5A9 /* OmonatCell */,
 				BDE3266A2B7DEDA9007DB5A9 /* HisobRaqamCell */,
@@ -293,6 +409,8 @@
 		BD8309CD2B6CBC1800952DD0 /* To'lovlar */ = {
 			isa = PBXGroup;
 			children = (
+				BD2BDD0B2B976B540045A823 /* Internet */,
+				BD2BDD062B973EA40045A823 /* elektr energiya */,
 				BD8309B72B6B779200952DD0 /* PayViewController.swift */,
 				BDCB7CE22B7D07B60096A23D /* PayViewControllerCell.swift */,
 			);
@@ -396,13 +514,13 @@
 		BDB803312B6AAD48005E8C9F /* TengeBank */ = {
 			isa = PBXGroup;
 			children = (
+				BD7D48802B938EA200B094EF /* Resources */,
 				BD8D82302B8E3170005D8A6B /* MyHomeItemView */,
 				BD49DB042B86558D0002F284 /* TransactionHistoryItemView */,
 				BD49DAFB2B862B100002F284 /* PaymentCardsItemView */,
 				BD49DAF22B85DBB80002F284 /* Omonatlar */,
 				BD49DAE92B85C3630002F284 /* Kreditlar */,
 				BDE326852B838D83007DB5A9 /* Kartalar */,
-				BDB803322B6AAD48005E8C9F /* AppDelegate.swift */,
 				BD8309C22B6B7E1300952DD0 /* TabbarVC.swift */,
 				BD8309C12B6B7D8B00952DD0 /* Controller */,
 				BD8309BB2B6B78EF00952DD0 /* Extensions */,
@@ -576,32 +694,49 @@
 				BD49DB032B862C930002F284 /* QRPaymentViewController.swift in Sources */,
 				BD8D82342B8EEED6005D8A6B /* AcceptViewController.swift in Sources */,
 				BDB803472B6AAF22005E8C9F /* HisobRaqamViewController.swift in Sources */,
+				BD2BDCCE2B947DD60045A823 /* ReliableDeviceViewController.swift in Sources */,
+				BD2BDD0A2B9740970045A823 /* ElectriCityCell.swift in Sources */,
 				BDCB7CE32B7D07B60096A23D /* PayViewControllerCell.swift in Sources */,
 				BDE3266E2B7DEE5C007DB5A9 /* KartaCell.swift in Sources */,
 				BDE326832B80776E007DB5A9 /* ProfileTableViewCell.swift in Sources */,
 				BD8309B82B6B779200952DD0 /* PayViewController.swift in Sources */,
 				BDFC39932B77C1CC00364A5B /* MyHomeCell.swift in Sources */,
+				BD2BDCF72B96FF4F0045A823 /* PublicCell.swift in Sources */,
 				BD9EB13F2B8C6AAF0000E55D /* AddCardViewController.swift in Sources */,
 				BDE326702B7DEE68007DB5A9 /* OmonatCell.swift in Sources */,
+				BD2BDCF02B96BB6C0045A823 /* ChangeNumberViewController.swift in Sources */,
 				BDFC39912B77C1BE00364A5B /* TransferCell.swift in Sources */,
 				BD6B58962B87194300E119A1 /* AboutUsViewController.swift in Sources */,
 				BD49DAFD2B862B3B0002F284 /* OtkazmalarViewController.swift in Sources */,
+				BD2BDD082B973EF90045A823 /* ElectriCity.swift in Sources */,
+				BD2BDCF22B96E3A50045A823 /* UzautoViewController.swift in Sources */,
+				BD7D48822B945D4100B094EF /* SecurityViewController.swift in Sources */,
 				BD49DAFF2B862BA30002F284 /* MeningArizalarimViewController.swift in Sources */,
+				BD2BDCF42B96F9F70045A823 /* PublicServiceViewController.swift in Sources */,
+				BD2BDCFC2B9713170045A823 /* BirthCertificateViewController.swift in Sources */,
+				BD2BDD0D2B976B730045A823 /* Internet.swift in Sources */,
 				BD49DAF82B85DC480002F284 /* UsefulCell.swift in Sources */,
 				BD9EB13C2B8B3D9F0000E55D /* WhereViewController.swift in Sources */,
 				BDEA70982B83A0C300CF73DE /* OpenCardsCell.swift in Sources */,
 				BDE3268A2B838E26007DB5A9 /* CardsViewController.swift in Sources */,
 				BD8309C32B6B7E1300952DD0 /* TabbarVC.swift in Sources */,
 				BD6B58992B8797B000E119A1 /* DeleteAkkauntViewController.swift in Sources */,
+				BD7D48852B94607900B094EF /* SecurityCell.swift in Sources */,
+				BD2BDD0F2B976BF10045A823 /* InternetCell.swift in Sources */,
+				BD2BDCD02B94A0A80045A823 /* ChangePasswordViewController.swift in Sources */,
 				BDFC39952B77C1E600364A5B /* TransactionHistoryCell.swift in Sources */,
 				BD5AA9D92B6D30F800743506 /* MainVC.swift in Sources */,
 				BDE326742B7DEE88007DB5A9 /* KreditCell.swift in Sources */,
+				BD2BDD022B9714110045A823 /* AboutRealEstate.swift in Sources */,
 				BDFC398B2B77B0F000364A5B /* StoryCell.swift in Sources */,
+				BD2BDD002B9713CC0045A823 /* InformationAboutDecision.swift in Sources */,
+				BD2BDCFE2B9713730045A823 /* InformationAboutMarriage.swift in Sources */,
 				BD49DB062B8655C20002F284 /* TransactionHistoryViewController.swift in Sources */,
 				BD49DAF42B85DBDE0002F284 /* OmonatViewController.swift in Sources */,
 				BDB803332B6AAD48005E8C9F /* AppDelegate.swift in Sources */,
 				BDA9ACB72B72127200527634 /* AgainTableViewCell.swift in Sources */,
 				BDE3267E2B7FB229007DB5A9 /* MessageViewController.swift in Sources */,
+				BD2BDD042B97148C0045A823 /* AboutTransport.swift in Sources */,
 				BDE3268E2B838EB5007DB5A9 /* HumoVirtualCell.swift in Sources */,
 				BD49DAFA2B85DC540002F284 /* ComfortCell.swift in Sources */,
 				BD7D487F2B9388D400B094EF /* QRScanner.swift in Sources */,
@@ -610,6 +745,7 @@
 				BD0B86052B906EA400A2A78E /* SelectCountViewController.swift in Sources */,
 				BDE326722B7DEE7B007DB5A9 /* HisobRaqamCell.swift in Sources */,
 				BDFC398F2B77C1A900364A5B /* PaymentCardsCell.swift in Sources */,
+				BD2BDCEE2B9660EF0045A823 /* NumberPad.swift in Sources */,
 				BD49DAEB2B85C3920002F284 /* CreditsViewController.swift in Sources */,
 				BDA9ACB92B72273B00527634 /* TransferTableViewCell.swift in Sources */,
 				BD8309BF2B6B795B00952DD0 /* Constraint.swift in Sources */,

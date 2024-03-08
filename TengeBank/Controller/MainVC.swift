@@ -98,7 +98,7 @@ final class MainVC: UIViewController {
     }
     
     @objc func buttonTapped() {
-        // Tugma bosilganda ishga tushmasi yaratish uchun kodlar
+        
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -124,6 +124,7 @@ final class MainVC: UIViewController {
                 section.orthogonalScrollingBehavior = .continuous
                 section.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
                 return section
+                
             case .balance:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -133,10 +134,10 @@ final class MainVC: UIViewController {
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 
                 let section = NSCollectionLayoutSection(group: group)
-                //            section.interGroupSpacing = 10
-                section.orthogonalScrollingBehavior = .groupPagingCentered
+                section.orthogonalScrollingBehavior = .continuous
                 section.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
                 return section
+                
             case .paymentCards:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/4), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -197,9 +198,8 @@ final class MainVC: UIViewController {
         }
         return layout
     }
-    
-    
 }
+
 
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -296,7 +296,9 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             
         case .story:
             
-            let secondView = Home()
+            let secondView = Home {
+                self.dismiss(animated: true)
+            }
             let hostingController = UIHostingController(rootView: secondView)
             hostingController.modalPresentationStyle = .fullScreen
             present(hostingController, animated: true, completion: nil)
@@ -314,7 +316,9 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             case .payment:
                 navigationController?.pushViewController(PayViewController(), animated: true)
             case .market:
-                break
+                if let url = URL(string: "https://tengemarket.uz") {
+                           UIApplication.shared.open(url)
+                       }
             case .exchange:
                 navigationController?.pushViewController(ExchangeViewController(), animated: true)
             case .unnown:

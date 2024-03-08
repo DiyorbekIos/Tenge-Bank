@@ -32,10 +32,15 @@ class TransferViewController: UIViewController {
         tableView.register(TransferTableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.isScrollEnabled = false
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     @objc private func leftButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
+    
     private func createLabel() {
         view.addSubview(titleLabel)
         titleLabel.text = "O'tkazmalar"
@@ -83,7 +88,20 @@ extension TransferViewController:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 0:
+            navigationController?.pushViewController(OtkazmalarViewController(), animated: true)
+        case 1:
+            break
+        case 2:
+            break
+        case 3:
+            break
+        case 4:
+            navigationController?.pushViewController(ExchangeViewController(), animated: true)
+        default:
+            break
+        }
     }
     
 } 
